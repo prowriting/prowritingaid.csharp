@@ -6,6 +6,7 @@ C# library for the ProWritingAid.API
 
 - API version: v1
 - SDK version: 1.0.0
+- [Nuget package](https://www.nuget.org/packages/ProWritingAid.SDK/)
 
 ## Frameworks supported
 - .NET 4.5 or later
@@ -20,55 +21,44 @@ Install-Package RestSharp
 Install-Package Newtonsoft.Json
 ```
 
-NOTE: RestSharp versions greater than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)
-
 ## Installation
-Run the following command to generate the DLL
-- [Mac/Linux] `/bin/sh build.sh`
-- [Windows] `build.bat`
-
-Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
-```csharp
-using ProWritingAid.SDK.Api;
-using ProWritingAid.SDK.Client;
-using Model;
-```
+Install SDK using [Nuget package](https://www.nuget.org/packages/ProWritingAid.SDK/).
 
 ## Getting Started
 
 ```csharp
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using ProWritingAid.SDK.Api;
-using ProWritingAid.SDK.Client;
 using ProWritingAid.SDK.Model;
 
 namespace Example
 {
     public class Example
-    {
-        public void main()
         {
-            
-            var api = new TextApi();
-            var request = new TextAnalysisRequest(
-                "I'd like to by that toy. wood you help me? I have twp more brothers.",
-                new List<string> {"grammar"},
-                TextAnalysisRequest.StyleEnum.General,
-                TextAnalysisRequest.LanguageEnum.En,
-                LicenseCredentials); 
-
-            try
+            public void main()
             {
-                var response = api.TextPost(request);
-                Debug.WriteLine(response);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling AsyncContextualThesaurusApi.AsyncContextualThesaurusPost: " + e.Message );
+                
+                var api = new TextApi();
+                var request = new TextAnalysisRequest(
+                    "I'd like to by that toy. wood you help me? I have twp more brothers.",
+                    new List<string> {"grammar"},
+                    TextAnalysisRequest.StyleEnum.General,
+                    TextAnalysisRequest.LanguageEnum.En,
+                    new RequestCredentials("00000000-0000-0000-0000-2212FC205139")); 
+    
+                try
+                {
+                    var response = api.TextPost(request);
+                    Debug.WriteLine(response);
+                }
+                catch (Exception e)
+                {
+                    Debug.Print("Exception when calling TextApi.TextPost: " + e.Message );
+                }
             }
         }
-    }
 }
 ```
 
