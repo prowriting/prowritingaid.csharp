@@ -42,11 +42,24 @@ namespace ProWritingAid.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WordCloudResponse" /> class.
         /// </summary>
-        /// <param name="Url">the URL of the Word Cloud.</param>
+        [JsonConstructorAttribute]
+        protected WordCloudResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WordCloudResponse" /> class.
+        /// </summary>
+        /// <param name="Url">the URL of the Word Cloud (required).</param>
         /// <param name="Language">The detected language of the text.</param>
         public WordCloudResponse(string Url = null, string Language = null)
         {
-            this.Url = Url;
+            // to ensure "Url" is required (not null)
+            if (Url == null)
+            {
+                throw new InvalidDataException("Url is a required property for WordCloudResponse and cannot be null");
+            }
+            else
+            {
+                this.Url = Url;
+            }
             this.Language = Language;
         }
         

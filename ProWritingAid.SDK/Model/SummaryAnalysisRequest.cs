@@ -151,7 +151,7 @@ namespace ProWritingAid.SDK.Model
         /// Initializes a new instance of the <see cref="SummaryAnalysisRequest" /> class.
         /// </summary>
         /// <param name="Text">Text to be analyzed (required).</param>
-        /// <param name="Settings">Analysis settings.</param>
+        /// <param name="Settings">Analysis settings (required).</param>
         /// <param name="Style">Document&#39;s writing style (required).</param>
         /// <param name="Language">Document&#39;s language  &lt;remarks&gt;  Set correct UK/US language to get region-specific suggestions  &lt;/remarks&gt; (required).</param>
         /// <param name="credentials">auth credentials</param>
@@ -189,7 +189,15 @@ namespace ProWritingAid.SDK.Model
             {
                 this.Language = Language;
             }
-            this.Settings = Settings;
+			// to ensure "Settings" is required (not null)
+            if (Settings == null)
+            {
+                throw new InvalidDataException("Settings is a required property for SummaryAnalysisRequest and cannot be null");
+            }
+            else
+            {
+                this.Settings = Settings;
+            }
             if (credentials == null)
             {
                 throw new ArgumentNullException(nameof(credentials));

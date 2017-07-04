@@ -239,16 +239,16 @@ namespace ProWritingAid.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WordCloudRequest" /> class.
         /// </summary>
-        /// <param name="Text">The text to be turned into a Word Cloud.</param>
-        /// <param name="Orientation">The orientation of the text.</param>
-        /// <param name="CaseMethod">The method to be used for casing.</param>
-        /// <param name="PaletteName">The name of the palette.</param>
-        /// <param name="MaximumWordCount">the maximum number of words to be created.</param>
-        /// <param name="RemoveCommonWords">Should Common words be removed from the cloud.</param>
-        /// <param name="FontName">The name of the font to use.</param>
-        /// <param name="Width">The width of the image to produce.</param>
-        /// <param name="Height">The height of the image to produce.</param>
-        /// <param name="OnlySentimentWords">Only use the sentiment words from the text.</param>
+        /// <param name="Text">The text to be turned into a Word Cloud (required).</param>
+        /// <param name="Orientation">The orientation of the text (required).</param>
+        /// <param name="CaseMethod">The method to be used for casing (required).</param>
+        /// <param name="PaletteName">The name of the palette (required).</param>
+        /// <param name="MaximumWordCount">the maximum number of words to be created (required).</param>
+        /// <param name="RemoveCommonWords">Should Common words be removed from the cloud (required).</param>
+        /// <param name="FontName">The name of the font to use (required).</param>
+        /// <param name="Width">The width of the image to produce (required).</param>
+        /// <param name="Height">The height of the image to produce (required).</param>
+        /// <param name="OnlySentimentWords">Only use the sentiment words from the text (required).</param>
         /// <param name="Style">Document&#39;s writing style (required).</param>
         /// <param name="Language">Document&#39;s language  &lt;remarks&gt;  Set correct UK/US language to get region-specific suggestions  &lt;/remarks&gt; (required).</param>
         public WordCloudRequest(
@@ -266,6 +266,96 @@ namespace ProWritingAid.SDK.Model
             LanguageEnum? Language,
             RequestCredentials credentials): base(credentials)
         {
+            // to ensure "Text" is required (not null)
+            if (Text == null)
+            {
+                throw new InvalidDataException("Text is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.Text = Text;
+            }
+            // to ensure "Orientation" is required (not null)
+            if (Orientation == null)
+            {
+                throw new InvalidDataException("Orientation is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.Orientation = Orientation;
+            }
+            // to ensure "CaseMethod" is required (not null)
+            if (CaseMethod == null)
+            {
+                throw new InvalidDataException("CaseMethod is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.CaseMethod = CaseMethod;
+            }
+            // to ensure "PaletteName" is required (not null)
+            if (PaletteName == null)
+            {
+                throw new InvalidDataException("PaletteName is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.PaletteName = PaletteName;
+            }
+            // to ensure "MaximumWordCount" is required (not null)
+            if (MaximumWordCount == null)
+            {
+                throw new InvalidDataException("MaximumWordCount is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.MaximumWordCount = MaximumWordCount;
+            }
+            // to ensure "RemoveCommonWords" is required (not null)
+            if (RemoveCommonWords == null)
+            {
+                throw new InvalidDataException("RemoveCommonWords is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.RemoveCommonWords = RemoveCommonWords;
+            }
+            // to ensure "FontName" is required (not null)
+            if (FontName == null)
+            {
+                throw new InvalidDataException("FontName is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.FontName = FontName;
+            }
+            // to ensure "Width" is required (not null)
+            if (Width == null)
+            {
+                throw new InvalidDataException("Width is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.Width = Width;
+            }
+            // to ensure "Height" is required (not null)
+            if (Height == null)
+            {
+                throw new InvalidDataException("Height is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.Height = Height;
+            }
+            // to ensure "OnlySentimentWords" is required (not null)
+            if (OnlySentimentWords == null)
+            {
+                throw new InvalidDataException("OnlySentimentWords is a required property for WordCloudRequest and cannot be null");
+            }
+            else
+            {
+                this.OnlySentimentWords = OnlySentimentWords;
+            }
             // to ensure "Style" is required (not null)
             if (Style == null)
             {
@@ -284,16 +374,6 @@ namespace ProWritingAid.SDK.Model
             {
                 this.Language = Language;
             }
-            this.Text = Text;
-            this.Orientation = Orientation;
-            this.CaseMethod = CaseMethod;
-            this.PaletteName = PaletteName;
-            this.MaximumWordCount = MaximumWordCount;
-            this.RemoveCommonWords = RemoveCommonWords;
-            this.FontName = FontName;
-            this.Width = Width;
-            this.Height = Height;
-            this.OnlySentimentWords = OnlySentimentWords;
         }
         
         /// <summary>

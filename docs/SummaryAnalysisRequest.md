@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Text** | **string** | Text to be analyzed | 
-**Settings** | [**AnalysisSettings**](AnalysisSettings.md) | Analysis settings | [optional] 
+**Settings** | [**AnalysisSettings**](AnalysisSettings.md) | Analysis settings | 
 **Style** | **string** | Document&#39;s writing style | 
 **Language** | **string** | Document&#39;s language  &lt;remarks&gt;  Set correct UK/US language to get region-specific suggestions  &lt;/remarks&gt; | 
 

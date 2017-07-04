@@ -43,13 +43,9 @@ namespace ProWritingAid.SDK.Model
         /// Initializes a new instance of the <see cref="ContextualThesaurusResponse" /> class.
         /// </summary>
         /// <param name="Suggestions">List of context-specific suggestions.</param>
-        /// <param name="Url">the URL of the Word Cloud.</param>
-        /// <param name="Language">The detected language of the text.</param>
-        public ContextualThesaurusResponse(List<string> Suggestions = null, string Url = null, string Language = null)
+        public ContextualThesaurusResponse(List<string> Suggestions = null)
         {
             this.Suggestions = Suggestions;
-            this.Url = Url;
-            this.Language = Language;
         }
         
         /// <summary>
@@ -59,18 +55,6 @@ namespace ProWritingAid.SDK.Model
         [DataMember(Name="Suggestions", EmitDefaultValue=false)]
         public List<string> Suggestions { get; set; }
         /// <summary>
-        /// the URL of the Word Cloud
-        /// </summary>
-        /// <value>the URL of the Word Cloud</value>
-        [DataMember(Name="Url", EmitDefaultValue=false)]
-        public string Url { get; set; }
-        /// <summary>
-        /// The detected language of the text
-        /// </summary>
-        /// <value>The detected language of the text</value>
-        [DataMember(Name="Language", EmitDefaultValue=false)]
-        public string Language { get; set; }
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -79,8 +63,6 @@ namespace ProWritingAid.SDK.Model
             var sb = new StringBuilder();
             sb.Append("class ContextualThesaurusResponse {\n");
             sb.Append("  Suggestions: ").Append(Suggestions).Append("\n");
-            sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,16 +103,6 @@ namespace ProWritingAid.SDK.Model
                     this.Suggestions == other.Suggestions ||
                     this.Suggestions != null &&
                     this.Suggestions.SequenceEqual(other.Suggestions)
-                ) && 
-                (
-                    this.Url == other.Url ||
-                    this.Url != null &&
-                    this.Url.Equals(other.Url)
-                ) && 
-                (
-                    this.Language == other.Language ||
-                    this.Language != null &&
-                    this.Language.Equals(other.Language)
                 );
         }
 
@@ -147,10 +119,6 @@ namespace ProWritingAid.SDK.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Suggestions != null)
                     hash = hash * 59 + this.Suggestions.GetHashCode();
-                if (this.Url != null)
-                    hash = hash * 59 + this.Url.GetHashCode();
-                if (this.Language != null)
-                    hash = hash * 59 + this.Language.GetHashCode();
                 return hash;
             }
         }
