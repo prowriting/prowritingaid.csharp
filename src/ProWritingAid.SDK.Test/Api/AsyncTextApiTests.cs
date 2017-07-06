@@ -86,12 +86,12 @@ namespace ProWritingAid.SDK.Test
                 TextAnalysisRequest.LanguageEnum.En,
                 LicenseCredentials);
             var response = initiator.AsyncTextPost(request);
-            var res = response.Result;
-            while (res == null)
+            while (response?.Result == null)
             {
                 Thread.Sleep(100);
-                res = result.AsyncTextResultGetResult(response.TaskId, LicenseCredentials);
+                response = result.AsyncTextResultGetResult(response.TaskId, LicenseCredentials);
             }
+            var res = response.Result;
             Assert.That(res, Is.Not.Null);
             Assert.That(res.Summaries, Is.Not.Empty);
             Assert.That(res.Tags, Is.Not.Empty);

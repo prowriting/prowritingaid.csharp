@@ -13,8 +13,8 @@ namespace ProWritingAid.SDK.Api.Async
         where TInitiator : IAsyncApiInitiator<TRequest, TResponse>
         where TGetter : IAsyncApiGetter<TResponse>
     {
-        public const int DefaultMonitoringTimeStepInMs = 500;
-        
+        public const int DefaultMonitoringTimeStepInMs = 1000;
+
         //delay between GetResult requests
         private readonly int _monitoringTimeStepInMs;
 
@@ -22,7 +22,10 @@ namespace ProWritingAid.SDK.Api.Async
 
         private readonly TGetter _getter;
 
-        protected AsyncApiBase(TInitiator initiator, TGetter getter, int monitoringTimeStepInMs = DefaultMonitoringTimeStepInMs)
+        protected AsyncApiBase(
+            TInitiator initiator,
+            TGetter getter,
+            int monitoringTimeStepInMs = DefaultMonitoringTimeStepInMs)
         {
             _initiator = initiator;
             _getter = getter;
@@ -54,81 +57,74 @@ namespace ProWritingAid.SDK.Api.Async
         protected ApiResponse<TResponse> PostWithHttpInfo(
             TRequest request)
         {
-            var asyncTask = _initiator.PostWithHttpInfo(request);
-            var response = new ApiResponse<TResponse>(
-                asyncTask.StatusCode,
-                asyncTask.Headers,
-                asyncTask.Data?.Result);
-            if (asyncTask.Data?.Result != null)
+            var response = _initiator.PostWithHttpInfo(request);
+            if (response.Data?.Result != null)
             {
-                return response;
+                return new ApiResponse<TResponse>(response.StatusCode, response.Headers, response.Data?.Result);
             }
-            var taskId = asyncTask?.Data?.TaskId;
-            if (string.IsNullOrEmpty(taskId))
+            if (string.IsNullOrEmpty(response.Data?.TaskId))
             {
                 throw new ApiException(422, "Unidentified error: can't process async request;");
             }
             var iterationIdx = 0;
             var maxIterations = GetMaxNumberOfIterations();
-            while (response?.Data == null && iterationIdx < maxIterations)
+            while (response?.Data?.Result == null && iterationIdx < maxIterations)
             {
                 Thread.Sleep(_monitoringTimeStepInMs);
-                response = _getter.GetResultWithHttpInfo(taskId, request.Credentials);
+                response = _getter.GetResultWithHttpInfo(response?.Data?.TaskId, request.Credentials);
                 iterationIdx++;
             }
-            if (response?.Data == null)
+            if (response?.Data?.Result == null)
             {
                 throw new ApiException(
                     408,
                     $@"Request timeout: wasn't able to get result in {Configuration.Timeout} ms");
             }
-            return response;
+            return new ApiResponse<TResponse>(response.StatusCode, response.Headers, response.Data.Result);
         }
 
         protected async Task<ApiResponse<TResponse>> PostAsyncWithHttpInfo(
             TRequest request)
         {
-            var asyncTask = await _initiator.PostAsyncWithHttpInfo(request);
-            var response = new ApiResponse<TResponse>(
-                asyncTask.StatusCode,
-                asyncTask.Headers,
-                asyncTask.Data?.Result);
-            if (asyncTask.Data?.Result != null)
+            var response = await _initiator.PostAsyncWithHttpInfo(request);
+            if (response.Data?.Result != null)
             {
-                return response;
+                return new ApiResponse<TResponse>(response.StatusCode, response.Headers, response.Data?.Result);
             }
-            var taskId = asyncTask?.Data?.TaskId;
-            if (string.IsNullOrEmpty(taskId))
+            if (string.IsNullOrEmpty(response.Data?.TaskId))
             {
                 throw new ApiException(422, "Unidentified error: can't process async request;");
             }
             var iterationIdx = 0;
             var maxIterations = GetMaxNumberOfIterations();
-            while (response?.Data == null && iterationIdx < maxIterations)
+            while (response?.Data?.Result == null && iterationIdx < maxIterations)
             {
                 await Task.Delay(_monitoringTimeStepInMs);
-                response = await _getter.GetResultAsyncWithHttpInfo(taskId, request.Credentials);
+                response = await _getter.GetResultAsyncWithHttpInfo(response?.Data?.TaskId, request.Credentials);
                 iterationIdx++;
             }
-            if (response?.Data == null)
+            if (response?.Data?.Result == null)
             {
                 throw new ApiException(
                     408,
                     $@"Request timeout: wasn't able to get result in {Configuration.Timeout} ms");
             }
-            return response;
+            return new ApiResponse<TResponse>(response.StatusCode, response.Headers, response.Data.Result);
         }
     }
 
+
     public interface IAsyncApiGetter<TResponse> : IApiAccessor
     {
-        ApiResponse<TResponse> GetResultWithHttpInfo(string taskId, RequestCredentials credentials);
-        Task<ApiResponse<TResponse>> GetResultAsyncWithHttpInfo(string taskId, RequestCredentials credentials);
+        ApiResponse<IAsyncResponse<TResponse>> GetResultWithHttpInfo(string taskId, RequestCredentials credentials);
+
+        Task<ApiResponse<IAsyncResponse<TResponse>>> GetResultAsyncWithHttpInfo(
+            string taskId,
+            RequestCredentials credentials);
     }
 
     public interface IAsyncApiInitiator<TRequest, TResponse> : IApiAccessor
         where TRequest : AnalysisRequestBase
-
     {
         ApiResponse<IAsyncResponse<TResponse>> PostWithHttpInfo(TRequest request);
         Task<ApiResponse<IAsyncResponse<TResponse>>> PostAsyncWithHttpInfo(TRequest request);

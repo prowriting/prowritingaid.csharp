@@ -44,8 +44,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>WordCloudResponse</returns>
-        WordCloudResponse AsyncWordCloudResultGetResult (string taskId, RequestCredentials credentials);
+        /// <returns>AsyncResponseWordCloudResponse</returns>
+        AsyncResponseWordCloudResponse AsyncWordCloudResultGetResult (string taskId, RequestCredentials credentials);
 
         /// <summary>
         /// 
@@ -55,8 +55,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>ApiResponse of WordCloudResponse</returns>
-        ApiResponse<WordCloudResponse> AsyncWordCloudResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials);
+        /// <returns>ApiResponse of AsyncResponseWordCloudResponse</returns>
+        ApiResponse<AsyncResponseWordCloudResponse> AsyncWordCloudResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -67,8 +67,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of WordCloudResponse</returns>
-        System.Threading.Tasks.Task<WordCloudResponse> AsyncWordCloudResultGetResultAsync (string taskId, RequestCredentials credentials);
+        /// <returns>Task of AsyncResponseWordCloudResponse</returns>
+        System.Threading.Tasks.Task<AsyncResponseWordCloudResponse> AsyncWordCloudResultGetResultAsync (string taskId, RequestCredentials credentials);
 
         /// <summary>
         /// 
@@ -78,8 +78,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of ApiResponse (WordCloudResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WordCloudResponse>> AsyncWordCloudResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials);
+        /// <returns>Task of ApiResponse (AsyncResponseWordCloudResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AsyncResponseWordCloudResponse>> AsyncWordCloudResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials);
         #endregion Asynchronous Operations
     }
 
@@ -197,10 +197,10 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>WordCloudResponse</returns>
-        public WordCloudResponse AsyncWordCloudResultGetResult (string taskId, RequestCredentials credentials)
+        /// <returns>AsyncResponseWordCloudResponse</returns>
+        public AsyncResponseWordCloudResponse AsyncWordCloudResultGetResult (string taskId, RequestCredentials credentials)
         {
-             ApiResponse<WordCloudResponse> localVarResponse = AsyncWordCloudResultGetResultWithHttpInfo(taskId, credentials);
+             ApiResponse<AsyncResponseWordCloudResponse> localVarResponse = AsyncWordCloudResultGetResultWithHttpInfo(taskId, credentials);
              return localVarResponse.Data;
         }
 
@@ -209,8 +209,8 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>ApiResponse of WordCloudResponse</returns>
-        public ApiResponse< WordCloudResponse > AsyncWordCloudResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials)
+        /// <returns>ApiResponse of AsyncResponseWordCloudResponse</returns>
+        public ApiResponse< AsyncResponseWordCloudResponse > AsyncWordCloudResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -260,9 +260,9 @@ namespace ProWritingAid.SDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WordCloudResponse>(localVarStatusCode,
+            return new ApiResponse<AsyncResponseWordCloudResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WordCloudResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WordCloudResponse)));
+                (AsyncResponseWordCloudResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncResponseWordCloudResponse)));
             
         }
 
@@ -272,9 +272,9 @@ namespace ProWritingAid.SDK.Api
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
         /// <returns>Task of WordCloudResponse</returns>
-        public async System.Threading.Tasks.Task<WordCloudResponse> AsyncWordCloudResultGetResultAsync (string taskId, RequestCredentials credentials)
+        public async System.Threading.Tasks.Task<AsyncResponseWordCloudResponse> AsyncWordCloudResultGetResultAsync (string taskId, RequestCredentials credentials)
         {
-             ApiResponse<WordCloudResponse> localVarResponse = await AsyncWordCloudResultGetResultAsyncWithHttpInfo(taskId, credentials);
+             ApiResponse<AsyncResponseWordCloudResponse> localVarResponse = await AsyncWordCloudResultGetResultAsyncWithHttpInfo(taskId, credentials);
              return localVarResponse.Data;
 
         }
@@ -284,8 +284,8 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of ApiResponse (WordCloudResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WordCloudResponse>> AsyncWordCloudResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials)
+        /// <returns>Task of ApiResponse (AsyncResponseWordCloudResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseWordCloudResponse>> AsyncWordCloudResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -335,9 +335,9 @@ namespace ProWritingAid.SDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WordCloudResponse>(localVarStatusCode,
+            return new ApiResponse<AsyncResponseWordCloudResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WordCloudResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WordCloudResponse)));
+                (AsyncResponseWordCloudResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncResponseWordCloudResponse)));
             
         }
 

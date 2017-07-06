@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="asyncwordcloudresultgetresult"></a>
 # **AsyncWordCloudResultGetResult**
-> WordCloudResponse AsyncWordCloudResultGetResult (string taskId)
+> AsyncResponseWordCloudResponse AsyncWordCloudResultGetResult (string taskId)
 
 
 
@@ -33,7 +33,7 @@ namespace Example
 
             try
             {
-                WordCloudResponse result = apiInstance.AsyncWordCloudResultGetResult(taskId);
+                AsyncResponseWordCloudResponse result = apiInstance.AsyncWordCloudResultGetResult(taskId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WordCloudResponse**](WordCloudResponse.md)
+[**AsyncResponseWordCloudResponse**](AsyncResponseWordCloudResponse.md)
 
 ### Authorization
 

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="asynccontextualthesaurusresultgetresult"></a>
 # **AsyncContextualThesaurusResultGetResult**
-> ContextualThesaurusResponse AsyncContextualThesaurusResultGetResult (string taskId)
+> AsyncResponseContextualThesaurusResponse AsyncContextualThesaurusResultGetResult (string taskId)
 
 
 
@@ -33,7 +33,7 @@ namespace Example
 
             try
             {
-                ContextualThesaurusResponse result = apiInstance.AsyncContextualThesaurusResultGetResult(taskId);
+                AsyncResponseContextualThesaurusResponse result = apiInstance.AsyncContextualThesaurusResultGetResult(taskId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContextualThesaurusResponse**](ContextualThesaurusResponse.md)
+[**AsyncResponseContextualThesaurusResponse**](AsyncResponseContextualThesaurusResponse.md)
 
 ### Authorization
 

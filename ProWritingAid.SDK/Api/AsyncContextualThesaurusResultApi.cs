@@ -45,7 +45,7 @@ namespace ProWritingAid.SDK.Api
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
         /// <returns>ContextualThesaurusResponse</returns>
-        ContextualThesaurusResponse AsyncContextualThesaurusResultGetResult (string taskId, RequestCredentials credentials);
+        AsyncResponseContextualThesaurusResponse AsyncContextualThesaurusResultGetResult (string taskId, RequestCredentials credentials);
 
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace ProWritingAid.SDK.Api
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
         /// <returns>ApiResponse of ContextualThesaurusResponse</returns>
-        ApiResponse<ContextualThesaurusResponse> AsyncContextualThesaurusResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials);
+        ApiResponse<AsyncResponseContextualThesaurusResponse> AsyncContextualThesaurusResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -67,8 +67,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of ContextualThesaurusResponse</returns>
-        System.Threading.Tasks.Task<ContextualThesaurusResponse> AsyncContextualThesaurusResultGetResultAsync (string taskId, RequestCredentials credentials);
+        /// <returns>Task of AsyncResponseContextualThesaurusResponse</returns>
+        System.Threading.Tasks.Task<AsyncResponseContextualThesaurusResponse> AsyncContextualThesaurusResultGetResultAsync (string taskId, RequestCredentials credentials);
 
         /// <summary>
         /// 
@@ -78,8 +78,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of ApiResponse (ContextualThesaurusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContextualThesaurusResponse>> AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials);
+        /// <returns>Task of ApiResponse (AsyncResponseContextualThesaurusResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AsyncResponseContextualThesaurusResponse>> AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials);
         #endregion Asynchronous Operations
     }
 
@@ -198,9 +198,9 @@ namespace ProWritingAid.SDK.Api
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
         /// <returns>ContextualThesaurusResponse</returns>
-        public ContextualThesaurusResponse AsyncContextualThesaurusResultGetResult (string taskId, RequestCredentials credentials)
+        public AsyncResponseContextualThesaurusResponse AsyncContextualThesaurusResultGetResult (string taskId, RequestCredentials credentials)
         {
-             ApiResponse<ContextualThesaurusResponse> localVarResponse = AsyncContextualThesaurusResultGetResultWithHttpInfo(taskId, credentials);
+             ApiResponse<AsyncResponseContextualThesaurusResponse> localVarResponse = AsyncContextualThesaurusResultGetResultWithHttpInfo(taskId, credentials);
              return localVarResponse.Data;
         }
 
@@ -210,7 +210,7 @@ namespace ProWritingAid.SDK.Api
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
         /// <returns>ApiResponse of ContextualThesaurusResponse</returns>
-        public ApiResponse< ContextualThesaurusResponse > AsyncContextualThesaurusResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials)
+        public ApiResponse< AsyncResponseContextualThesaurusResponse > AsyncContextualThesaurusResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -260,9 +260,9 @@ namespace ProWritingAid.SDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ContextualThesaurusResponse>(localVarStatusCode,
+            return new ApiResponse<AsyncResponseContextualThesaurusResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ContextualThesaurusResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContextualThesaurusResponse)));
+                (AsyncResponseContextualThesaurusResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncResponseContextualThesaurusResponse)));
             
         }
 
@@ -272,9 +272,9 @@ namespace ProWritingAid.SDK.Api
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
         /// <returns>Task of ContextualThesaurusResponse</returns>
-        public async System.Threading.Tasks.Task<ContextualThesaurusResponse> AsyncContextualThesaurusResultGetResultAsync (string taskId, RequestCredentials credentials)
+        public async System.Threading.Tasks.Task<AsyncResponseContextualThesaurusResponse> AsyncContextualThesaurusResultGetResultAsync (string taskId, RequestCredentials credentials)
         {
-             ApiResponse<ContextualThesaurusResponse> localVarResponse = await AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo(taskId, credentials);
+             ApiResponse<AsyncResponseContextualThesaurusResponse> localVarResponse = await AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo(taskId, credentials);
              return localVarResponse.Data;
 
         }
@@ -284,8 +284,8 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of ApiResponse (ContextualThesaurusResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ContextualThesaurusResponse>> AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials)
+        /// <returns>Task of ApiResponse (AsyncResponseContextualThesaurusResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseContextualThesaurusResponse>> AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -335,9 +335,9 @@ namespace ProWritingAid.SDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ContextualThesaurusResponse>(localVarStatusCode,
+            return new ApiResponse<AsyncResponseContextualThesaurusResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ContextualThesaurusResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContextualThesaurusResponse)));
+                (AsyncResponseContextualThesaurusResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncResponseContextualThesaurusResponse)));
             
         }
 

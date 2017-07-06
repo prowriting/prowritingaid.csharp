@@ -171,6 +171,15 @@ namespace ProWritingAid.SDK.Model
             {
                 this.Text = Text;
             }
+            // to ensure "Settings" is required (not null)
+            if (Settings == null)
+            {
+                throw new InvalidDataException("Settings is a required property for SummaryAnalysisRequest and cannot be null");
+            }
+            else
+            {
+                this.Settings = Settings;
+            }
             // to ensure "Style" is required (not null)
             if (Style == null)
             {
@@ -188,15 +197,6 @@ namespace ProWritingAid.SDK.Model
             else
             {
                 this.Language = Language;
-            }
-			// to ensure "Settings" is required (not null)
-            if (Settings == null)
-            {
-                throw new InvalidDataException("Settings is a required property for SummaryAnalysisRequest and cannot be null");
-            }
-            else
-            {
-                this.Settings = Settings;
             }
             if (credentials == null)
             {

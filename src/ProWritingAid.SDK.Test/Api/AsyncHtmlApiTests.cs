@@ -21,6 +21,7 @@
  */
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using ProWritingAid.SDK.Api;
 using ProWritingAid.SDK.Api.Async;
@@ -87,6 +88,22 @@ namespace ProWritingAid.SDK.Test
                 LicenseCredentials);
 
             var res = Api.HtmlPost(request);
+
+            Assert.That(res, Is.Not.Null);
+            Assert.That(res.Summaries, Is.Not.Empty);
+        }
+
+        [Test]
+        public async Task CanGetResultsAsync()
+        {
+            var request = new HtmlAnalysisRequest(
+                LongSampleText,
+                new List<string> {"grammar"},
+                HtmlAnalysisRequest.StyleEnum.General,
+                HtmlAnalysisRequest.LanguageEnum.En,
+                LicenseCredentials);
+
+            var res = await Api.HtmlPostAsync(request);
 
             Assert.That(res, Is.Not.Null);
             Assert.That(res.Summaries, Is.Not.Empty);

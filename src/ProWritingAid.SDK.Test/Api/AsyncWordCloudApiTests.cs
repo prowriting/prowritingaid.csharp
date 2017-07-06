@@ -21,6 +21,7 @@
  */
 
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using ProWritingAid.SDK.Api.Async;
 using ProWritingAid.SDK.Client;
@@ -60,6 +61,31 @@ namespace ProWritingAid.SDK.Test
                 LicenseCredentials);
 
             var res = Api.WordCloudPost(request);
+
+            Assert.That(res, Is.Not.Null);
+            Assert.That(res.Url, Is.Not.Null);
+            Assert.That(res.Url, Is.Not.Empty);
+        }
+
+        [Test]
+        public async Task CanGetResultsAsync()
+        {
+            var request = new WordCloudRequest(
+                ShortSampleText,
+                WordCloudRequest.OrientationEnum.EveryWhichWay,
+                WordCloudRequest.CaseMethodEnum.IntelligentCase,
+                "Earthy",
+                Int32.MaxValue,
+                true,
+                "Arial",
+                500,
+                500,
+                false,
+                WordCloudRequest.StyleEnum.General,
+                WordCloudRequest.LanguageEnum.En,
+                LicenseCredentials);
+
+            var res = await Api.WordCloudPostAsync(request);
 
             Assert.That(res, Is.Not.Null);
             Assert.That(res.Url, Is.Not.Null);

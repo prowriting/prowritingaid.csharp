@@ -21,6 +21,7 @@
  */
 
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using ProWritingAid.SDK.Api;
 using ProWritingAid.SDK.Api.Async;
@@ -83,6 +84,21 @@ namespace ProWritingAid.SDK.Test
                 20,
                 LicenseCredentials);
             var res = Api.ContextualThesaurusPost(req);
+            Assert.That(res, Is.Not.Null);
+            Assert.That(res.Suggestions, Is.Not.Null);
+            Assert.That(res.Suggestions, Is.Not.Empty);
+        }
+        
+        [Test]
+        public async Task CanGetCorrectSuggestionsAsync()
+        {
+            var req = new ContextualThesaurusRequest(
+                "This is a sample text in English to test the sdk thesaurus. " +
+                "This is a second paragraph in the document. This  is a new line.",
+                17,
+                20,
+                LicenseCredentials);
+            var res = await Api.ContextualThesaurusPostAsync(req);
             Assert.That(res, Is.Not.Null);
             Assert.That(res.Suggestions, Is.Not.Null);
             Assert.That(res.Suggestions, Is.Not.Empty);

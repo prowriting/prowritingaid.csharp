@@ -21,6 +21,7 @@
  */
 
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using ProWritingAid.SDK.Api;
 using ProWritingAid.SDK.Api.Async;
@@ -90,6 +91,24 @@ namespace ProWritingAid.SDK.Test
                 SummaryAnalysisRequest.LanguageEnum.En,
                 LicenseCredentials);
             var response = Api.SummaryPost(request);
+            Assert.That(response, Is.Not.Null);
+            Assert.That(response.Text, Is.Not.Null);
+            Assert.That(response.Text, Is.Not.Empty);
+        }
+
+        /// <summary>
+        /// Test SummaryPost
+        /// </summary>
+        [Test]
+        public async Task CanGetResultAsync()
+        {
+            var request = new SummaryAnalysisRequest(
+                LongSampleText,
+                new AnalysisSettings(),
+                SummaryAnalysisRequest.StyleEnum.General,
+                SummaryAnalysisRequest.LanguageEnum.En,
+                LicenseCredentials);
+            var response = await Api.SummaryPostAsync(request);
             Assert.That(response, Is.Not.Null);
             Assert.That(response.Text, Is.Not.Null);
             Assert.That(response.Text, Is.Not.Empty);

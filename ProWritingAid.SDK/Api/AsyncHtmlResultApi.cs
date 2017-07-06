@@ -44,8 +44,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>HtmlAnalysisResponse</returns>
-        HtmlAnalysisResponse AsyncHtmlResultGetResult (string taskId, RequestCredentials credentials);
+        /// <returns>AsyncResponseHtmlAnalysisResponse</returns>
+        AsyncResponseHtmlAnalysisResponse AsyncHtmlResultGetResult (string taskId, RequestCredentials credentials);
 
         /// <summary>
         /// 
@@ -55,8 +55,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>ApiResponse of HtmlAnalysisResponse</returns>
-        ApiResponse<HtmlAnalysisResponse> AsyncHtmlResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials);
+        /// <returns>AsyncResponseApiResponse of HtmlAnalysisResponse</returns>
+        ApiResponse<AsyncResponseHtmlAnalysisResponse> AsyncHtmlResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -67,8 +67,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of HtmlAnalysisResponse</returns>
-        System.Threading.Tasks.Task<HtmlAnalysisResponse> AsyncHtmlResultGetResultAsync (string taskId, RequestCredentials credentials);
+        /// <returns>Task of AsyncResponseHtmlAnalysisResponse</returns>
+        System.Threading.Tasks.Task<AsyncResponseHtmlAnalysisResponse> AsyncHtmlResultGetResultAsync (string taskId, RequestCredentials credentials);
 
         /// <summary>
         /// 
@@ -78,8 +78,8 @@ namespace ProWritingAid.SDK.Api
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of ApiResponse (HtmlAnalysisResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<HtmlAnalysisResponse>> AsyncHtmlResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials);
+        /// <returns>Task of ApiResponse (AsyncResponseHtmlAnalysisResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AsyncResponseHtmlAnalysisResponse>> AsyncHtmlResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials);
         #endregion Asynchronous Operations
     }
 
@@ -197,10 +197,10 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>HtmlAnalysisResponse</returns>
-        public HtmlAnalysisResponse AsyncHtmlResultGetResult (string taskId, RequestCredentials credentials)
+        /// <returns>AsyncResponseHtmlAnalysisResponse</returns>
+        public AsyncResponseHtmlAnalysisResponse AsyncHtmlResultGetResult (string taskId, RequestCredentials credentials)
         {
-             ApiResponse<HtmlAnalysisResponse> localVarResponse = AsyncHtmlResultGetResultWithHttpInfo(taskId, credentials);
+             ApiResponse<AsyncResponseHtmlAnalysisResponse> localVarResponse = AsyncHtmlResultGetResultWithHttpInfo(taskId, credentials);
              return localVarResponse.Data;
         }
 
@@ -209,8 +209,8 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>ApiResponse of HtmlAnalysisResponse</returns>
-        public ApiResponse< HtmlAnalysisResponse > AsyncHtmlResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials)
+        /// <returns>ApiResponse of AsyncResponseHtmlAnalysisResponse</returns>
+        public ApiResponse< AsyncResponseHtmlAnalysisResponse > AsyncHtmlResultGetResultWithHttpInfo (string taskId, RequestCredentials credentials)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -260,9 +260,9 @@ namespace ProWritingAid.SDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<HtmlAnalysisResponse>(localVarStatusCode,
+            return new ApiResponse<AsyncResponseHtmlAnalysisResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (HtmlAnalysisResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(HtmlAnalysisResponse)));
+                (AsyncResponseHtmlAnalysisResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncResponseHtmlAnalysisResponse)));
             
         }
 
@@ -271,10 +271,10 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of HtmlAnalysisResponse</returns>
-        public async System.Threading.Tasks.Task<HtmlAnalysisResponse> AsyncHtmlResultGetResultAsync (string taskId, RequestCredentials credentials)
+        /// <returns>Task of AsyncResponseHtmlAnalysisResponse</returns>
+        public async System.Threading.Tasks.Task<AsyncResponseHtmlAnalysisResponse> AsyncHtmlResultGetResultAsync (string taskId, RequestCredentials credentials)
         {
-             ApiResponse<HtmlAnalysisResponse> localVarResponse = await AsyncHtmlResultGetResultAsyncWithHttpInfo(taskId, credentials);
+             ApiResponse<AsyncResponseHtmlAnalysisResponse> localVarResponse = await AsyncHtmlResultGetResultAsyncWithHttpInfo(taskId, credentials);
              return localVarResponse.Data;
 
         }
@@ -284,8 +284,8 @@ namespace ProWritingAid.SDK.Api
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId"></param>
-        /// <returns>Task of ApiResponse (HtmlAnalysisResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<HtmlAnalysisResponse>> AsyncHtmlResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials)
+        /// <returns>Task of ApiResponse (AsyncResponseHtmlAnalysisResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseHtmlAnalysisResponse>> AsyncHtmlResultGetResultAsyncWithHttpInfo (string taskId, RequestCredentials credentials)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -335,9 +335,9 @@ namespace ProWritingAid.SDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<HtmlAnalysisResponse>(localVarStatusCode,
+            return new ApiResponse<AsyncResponseHtmlAnalysisResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (HtmlAnalysisResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(HtmlAnalysisResponse)));
+                (AsyncResponseHtmlAnalysisResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncResponseHtmlAnalysisResponse)));
             
         }
 

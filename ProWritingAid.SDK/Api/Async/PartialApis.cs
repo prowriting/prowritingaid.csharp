@@ -5,8 +5,18 @@ using ProWritingAid.SDK.Client;
 using ProWritingAid.SDK.Model;
 using ProWritingAid.SDK.Model.Async;
 
+// ReSharper disable once CheckNamespace
 namespace ProWritingAid.SDK.Api
 {
+    internal static class Tools
+    {
+        public static ApiResponse<IAsyncResponse<TData>> Convert<TData, TResponse>(ApiResponse<TResponse> response)
+            where TResponse : IAsyncResponse<TData>
+        {
+            return new ApiResponse<IAsyncResponse<TData>>(response.StatusCode, response.Headers, response.Data);
+        }
+    }
+
     //Contextual thesaurus
 
     public partial class AsyncContextualThesaurusApi : IAsyncApiInitiator<ContextualThesaurusRequest,
@@ -15,35 +25,37 @@ namespace ProWritingAid.SDK.Api
         public ApiResponse<IAsyncResponse<ContextualThesaurusResponse>> PostWithHttpInfo(
             ContextualThesaurusRequest request)
         {
-            var res = AsyncContextualThesaurusPostWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<ContextualThesaurusResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<ContextualThesaurusResponse, AsyncResponseContextualThesaurusResponse>(
+                AsyncContextualThesaurusPostWithHttpInfo(request));
         }
 
         public async Task<ApiResponse<IAsyncResponse<ContextualThesaurusResponse>>> PostAsyncWithHttpInfo(
             ContextualThesaurusRequest request)
         {
-            var res = await AsyncContextualThesaurusPostAsyncWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<ContextualThesaurusResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<ContextualThesaurusResponse, AsyncResponseContextualThesaurusResponse>(
+                await AsyncContextualThesaurusPostAsyncWithHttpInfo(request));
         }
     }
 
     public partial class AsyncContextualThesaurusResultApi : IAsyncApiGetter<ContextualThesaurusResponse>
     {
-        public ApiResponse<ContextualThesaurusResponse> GetResultWithHttpInfo(
+        public ApiResponse<IAsyncResponse<ContextualThesaurusResponse>> GetResultWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return AsyncContextualThesaurusResultGetResultWithHttpInfo(taskId, credentials);
+            return Tools.Convert<ContextualThesaurusResponse, AsyncResponseContextualThesaurusResponse>(
+                AsyncContextualThesaurusResultGetResultWithHttpInfo(taskId, credentials));
         }
 
-        public async Task<ApiResponse<ContextualThesaurusResponse>> GetResultAsyncWithHttpInfo(
+        public async Task<ApiResponse<IAsyncResponse<ContextualThesaurusResponse>>> GetResultAsyncWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return await AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo(taskId, credentials);
+            return Tools.Convert<ContextualThesaurusResponse, AsyncResponseContextualThesaurusResponse>(
+                await AsyncContextualThesaurusResultGetResultAsyncWithHttpInfo(taskId, credentials));
         }
     }
-    
+
     //Word cloud
     public partial class AsyncWordCloudApi : IAsyncApiInitiator<WordCloudRequest,
         WordCloudResponse>
@@ -51,32 +63,34 @@ namespace ProWritingAid.SDK.Api
         public ApiResponse<IAsyncResponse<WordCloudResponse>> PostWithHttpInfo(
             WordCloudRequest request)
         {
-            var res = AsyncWordCloudPostWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<WordCloudResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<WordCloudResponse, AsyncResponseWordCloudResponse>(
+                AsyncWordCloudPostWithHttpInfo(request));
         }
 
         public async Task<ApiResponse<IAsyncResponse<WordCloudResponse>>> PostAsyncWithHttpInfo(
             WordCloudRequest request)
         {
-            var res = await AsyncWordCloudPostAsyncWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<WordCloudResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<WordCloudResponse, AsyncResponseWordCloudResponse>(
+                await AsyncWordCloudPostAsyncWithHttpInfo(request));
         }
     }
 
     public partial class AsyncWordCloudResultApi : IAsyncApiGetter<WordCloudResponse>
     {
-        public ApiResponse<WordCloudResponse> GetResultWithHttpInfo(
+        public ApiResponse<IAsyncResponse<WordCloudResponse>> GetResultWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return AsyncWordCloudResultGetResultWithHttpInfo(taskId, credentials);
+            return Tools.Convert<WordCloudResponse, AsyncResponseWordCloudResponse>(
+                AsyncWordCloudResultGetResultWithHttpInfo(taskId, credentials));
         }
 
-        public async Task<ApiResponse<WordCloudResponse>> GetResultAsyncWithHttpInfo(
+        public async Task<ApiResponse<IAsyncResponse<WordCloudResponse>>> GetResultAsyncWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return await AsyncWordCloudResultGetResultAsyncWithHttpInfo(taskId, credentials);
+            return Tools.Convert<WordCloudResponse, AsyncResponseWordCloudResponse>(
+                await AsyncWordCloudResultGetResultAsyncWithHttpInfo(taskId, credentials));
         }
     }
 
@@ -87,32 +101,34 @@ namespace ProWritingAid.SDK.Api
         public ApiResponse<IAsyncResponse<TextAnalysisResponse>> PostWithHttpInfo(
             TextAnalysisRequest request)
         {
-            var res = AsyncTextPostWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<TextAnalysisResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<TextAnalysisResponse, AsyncResponseTextAnalysisResponse>(
+                AsyncTextPostWithHttpInfo(request));
         }
 
         public async Task<ApiResponse<IAsyncResponse<TextAnalysisResponse>>> PostAsyncWithHttpInfo(
             TextAnalysisRequest request)
         {
-            var res = await AsyncTextPostAsyncWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<TextAnalysisResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<TextAnalysisResponse, AsyncResponseTextAnalysisResponse>(
+                await AsyncTextPostAsyncWithHttpInfo(request));
         }
     }
 
     public partial class AsyncTextResultApi : IAsyncApiGetter<TextAnalysisResponse>
     {
-        public ApiResponse<TextAnalysisResponse> GetResultWithHttpInfo(
+        public ApiResponse<IAsyncResponse<TextAnalysisResponse>> GetResultWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return AsyncTextResultGetResultWithHttpInfo(taskId, credentials);
+            return Tools.Convert<TextAnalysisResponse, AsyncResponseTextAnalysisResponse>(
+                AsyncTextResultGetResultWithHttpInfo(taskId, credentials));
         }
 
-        public async Task<ApiResponse<TextAnalysisResponse>> GetResultAsyncWithHttpInfo(
+        public async Task<ApiResponse<IAsyncResponse<TextAnalysisResponse>>> GetResultAsyncWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return await AsyncTextResultGetResultAsyncWithHttpInfo(taskId, credentials);
+            return Tools.Convert<TextAnalysisResponse, AsyncResponseTextAnalysisResponse>(
+                await AsyncTextResultGetResultAsyncWithHttpInfo(taskId, credentials));
         }
     }
 
@@ -123,35 +139,37 @@ namespace ProWritingAid.SDK.Api
         public ApiResponse<IAsyncResponse<HtmlAnalysisResponse>> PostWithHttpInfo(
             HtmlAnalysisRequest request)
         {
-            var res = AsyncHtmlPostWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<HtmlAnalysisResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<HtmlAnalysisResponse, AsyncResponseHtmlAnalysisResponse>(
+                AsyncHtmlPostWithHttpInfo(request));
         }
 
         public async Task<ApiResponse<IAsyncResponse<HtmlAnalysisResponse>>> PostAsyncWithHttpInfo(
             HtmlAnalysisRequest request)
         {
-            var res = await AsyncHtmlPostAsyncWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<HtmlAnalysisResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<HtmlAnalysisResponse, AsyncResponseHtmlAnalysisResponse>(
+                await AsyncHtmlPostAsyncWithHttpInfo(request));
         }
     }
 
     public partial class AsyncHtmlResultApi : IAsyncApiGetter<HtmlAnalysisResponse>
     {
-        public ApiResponse<HtmlAnalysisResponse> GetResultWithHttpInfo(
+        public ApiResponse<IAsyncResponse<HtmlAnalysisResponse>> GetResultWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return AsyncHtmlResultGetResultWithHttpInfo(taskId, credentials);
+            return Tools.Convert<HtmlAnalysisResponse, AsyncResponseHtmlAnalysisResponse>(
+                AsyncHtmlResultGetResultWithHttpInfo(taskId, credentials));
         }
 
-        public async Task<ApiResponse<HtmlAnalysisResponse>> GetResultAsyncWithHttpInfo(
+        public async Task<ApiResponse<IAsyncResponse<HtmlAnalysisResponse>>> GetResultAsyncWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return await AsyncHtmlResultGetResultAsyncWithHttpInfo(taskId, credentials);
+            return Tools.Convert<HtmlAnalysisResponse, AsyncResponseHtmlAnalysisResponse>(
+                await AsyncHtmlResultGetResultAsyncWithHttpInfo(taskId, credentials));
         }
     }
-    
+
     //Summary
     public partial class AsyncSummaryApi : IAsyncApiInitiator<SummaryAnalysisRequest,
         SummaryAnalysisResponse>
@@ -159,32 +177,34 @@ namespace ProWritingAid.SDK.Api
         public ApiResponse<IAsyncResponse<SummaryAnalysisResponse>> PostWithHttpInfo(
             SummaryAnalysisRequest request)
         {
-            var res = AsyncSummaryPostWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<SummaryAnalysisResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<SummaryAnalysisResponse, AsyncResponseSummaryAnalysisResponse>(
+                AsyncSummaryPostWithHttpInfo(request));
         }
 
         public async Task<ApiResponse<IAsyncResponse<SummaryAnalysisResponse>>> PostAsyncWithHttpInfo(
             SummaryAnalysisRequest request)
         {
-            var res = await AsyncSummaryPostAsyncWithHttpInfo(request);
-            return new ApiResponse<IAsyncResponse<SummaryAnalysisResponse>>(res.StatusCode, res.Headers, res.Data);
+            return Tools.Convert<SummaryAnalysisResponse, AsyncResponseSummaryAnalysisResponse>(
+                await AsyncSummaryPostAsyncWithHttpInfo(request));
         }
     }
 
     public partial class AsyncSummaryResultApi : IAsyncApiGetter<SummaryAnalysisResponse>
     {
-        public ApiResponse<SummaryAnalysisResponse> GetResultWithHttpInfo(
+        public ApiResponse<IAsyncResponse<SummaryAnalysisResponse>> GetResultWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return AsyncSummaryResultGetResultWithHttpInfo(taskId, credentials);
+            return Tools.Convert<SummaryAnalysisResponse, AsyncResponseSummaryAnalysisResponse>(
+                AsyncSummaryResultGetResultWithHttpInfo(taskId, credentials));
         }
 
-        public async Task<ApiResponse<SummaryAnalysisResponse>> GetResultAsyncWithHttpInfo(
+        public async Task<ApiResponse<IAsyncResponse<SummaryAnalysisResponse>>> GetResultAsyncWithHttpInfo(
             string taskId,
             RequestCredentials credentials)
         {
-            return await AsyncSummaryResultGetResultAsyncWithHttpInfo(taskId, credentials);
+            return Tools.Convert<SummaryAnalysisResponse, AsyncResponseSummaryAnalysisResponse>(
+                await AsyncSummaryResultGetResultAsyncWithHttpInfo(taskId, credentials));
         }
     }
 }

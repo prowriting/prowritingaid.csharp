@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="asyncsummaryresultgetresult"></a>
 # **AsyncSummaryResultGetResult**
-> SummaryAnalysisResponse AsyncSummaryResultGetResult (string taskId)
+> AsyncResponseSummaryAnalysisResponse AsyncSummaryResultGetResult (string taskId)
 
 
 
@@ -33,7 +33,7 @@ namespace Example
 
             try
             {
-                SummaryAnalysisResponse result = apiInstance.AsyncSummaryResultGetResult(taskId);
+                AsyncResponseSummaryAnalysisResponse result = apiInstance.AsyncSummaryResultGetResult(taskId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SummaryAnalysisResponse**](SummaryAnalysisResponse.md)
+[**AsyncResponseSummaryAnalysisResponse**](AsyncResponseSummaryAnalysisResponse.md)
 
 ### Authorization
 

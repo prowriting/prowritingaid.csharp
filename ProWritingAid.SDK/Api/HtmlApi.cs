@@ -86,7 +86,7 @@ namespace ProWritingAid.SDK.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class HtmlApi :ApiBase, IHtmlApi
+    public partial class HtmlApi : ApiBase, IHtmlApi
     {
         private ProWritingAid.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
