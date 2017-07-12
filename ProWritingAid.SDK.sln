@@ -6,6 +6,48 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWritingAid.SDK", "ProWri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWritingAid.SDK.Test", "src\ProWritingAid.SDK.Test\ProWritingAid.SDK.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{61A99973-C3BA-45EA-977A-C7ED85F72470}"
+ProjectSection(SolutionItems) = preProject
+	docs\AnalysisSettings.md = docs\AnalysisSettings.md
+	docs\AnalysisSummary.md = docs\AnalysisSummary.md
+	docs\AnalysisSummaryGraph.md = docs\AnalysisSummaryGraph.md
+	docs\AnalysisSummaryGraphItem.md = docs\AnalysisSummaryGraphItem.md
+	docs\AnalysisSummaryItem.md = docs\AnalysisSummaryItem.md
+	docs\AnalysisSummarySubItem.md = docs\AnalysisSummarySubItem.md
+	docs\AsyncContextualThesaurusApi.md = docs\AsyncContextualThesaurusApi.md
+	docs\AsyncContextualThesaurusResultApi.md = docs\AsyncContextualThesaurusResultApi.md
+	docs\AsyncHtmlApi.md = docs\AsyncHtmlApi.md
+	docs\AsyncHtmlResultApi.md = docs\AsyncHtmlResultApi.md
+	docs\AsyncResponseContextualThesaurusResponse.md = docs\AsyncResponseContextualThesaurusResponse.md
+	docs\AsyncResponseHtmlAnalysisResponse.md = docs\AsyncResponseHtmlAnalysisResponse.md
+	docs\AsyncResponseSummaryAnalysisResponse.md = docs\AsyncResponseSummaryAnalysisResponse.md
+	docs\AsyncResponseTextAnalysisResponse.md = docs\AsyncResponseTextAnalysisResponse.md
+	docs\AsyncResponseWordCloudResponse.md = docs\AsyncResponseWordCloudResponse.md
+	docs\AsyncSummaryApi.md = docs\AsyncSummaryApi.md
+	docs\AsyncSummaryResultApi.md = docs\AsyncSummaryResultApi.md
+	docs\AsyncTextApi.md = docs\AsyncTextApi.md
+	docs\AsyncTextResultApi.md = docs\AsyncTextResultApi.md
+	docs\AsyncWordCloudApi.md = docs\AsyncWordCloudApi.md
+	docs\AsyncWordCloudResultApi.md = docs\AsyncWordCloudResultApi.md
+	docs\ContextualThesaurusApi.md = docs\ContextualThesaurusApi.md
+	docs\ContextualThesaurusRequest.md = docs\ContextualThesaurusRequest.md
+	docs\ContextualThesaurusResponse.md = docs\ContextualThesaurusResponse.md
+	docs\DocTag.md = docs\DocTag.md
+	docs\HtmlAnalysisRequest.md = docs\HtmlAnalysisRequest.md
+	docs\HtmlAnalysisResponse.md = docs\HtmlAnalysisResponse.md
+	docs\HtmlApi.md = docs\HtmlApi.md
+	docs\SuggestionCategory.md = docs\SuggestionCategory.md
+	docs\SummaryAnalysisRequest.md = docs\SummaryAnalysisRequest.md
+	docs\SummaryAnalysisResponse.md = docs\SummaryAnalysisResponse.md
+	docs\SummaryApi.md = docs\SummaryApi.md
+	docs\TextAnalysisRequest.md = docs\TextAnalysisRequest.md
+	docs\TextAnalysisResponse.md = docs\TextAnalysisResponse.md
+	docs\TextApi.md = docs\TextApi.md
+	docs\WordCloudApi.md = docs\WordCloudApi.md
+	docs\WordCloudRequest.md = docs\WordCloudRequest.md
+	docs\WordCloudResponse.md = docs\WordCloudResponse.md
+EndProjectSection
+EndProject
 Global
 GlobalSection(SolutionConfigurationPlatforms) = preSolution
 Debug|Any CPU = Debug|Any CPU
