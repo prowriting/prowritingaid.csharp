@@ -11,16 +11,22 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>prowritingaid.com services CSharp API</description>
         <releaseNotes>
-        Initial release of the package
+            Initial release of the package
+            17.05.2017 Auth with session information support
+            18.05.2017 Summary analysis support
+	    31.10.2017 V2 API support Ignore patterns API
         </releaseNotes>
         <copyright>Copyright 2017</copyright>
         <tags>prowritingaid api pwa grammar nlp style spelling rest</tags>
         <dependencies>
-            <dependency id="Newtonsoft.Json" version="10.0.2" />
-            <dependency id="RestSharp" version="105.2.3" />
+            <dependency id="NewtonSoft.Json" version="10.0.3" />
+            <dependency id="RestSharp" version="105.1.0" />
         </dependencies>
     </metadata>
     <files>
         <file src="bin\Release\ProWritingAid.SDK.*" target="lib\net45" />
+        <!-- A readme.txt will be displayed when the package is installed -->
+        <file src="..\..\README.md" target="" />
+        <file src="..\..\docs\**\*.*" target="docs" />
     </files>
 </package>

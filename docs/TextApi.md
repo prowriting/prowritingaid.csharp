@@ -4,12 +4,13 @@ All URIs are relative to *https://api.prowritingaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**TextPost**](TextApi.md#textpost) | **POST** /api/text | 
+[**Get**](TextApi.md#get) | **GET** /api/async/text/result/{taskId} | 
+[**Post**](TextApi.md#post) | **POST** /api/async/text | 
 
 
-<a name="textpost"></a>
-# **TextPost**
-> TextAnalysisResponse TextPost (TextAnalysisRequest request)
+<a name="get"></a>
+# **Get**
+> AsyncResponseTextAnalysisResponse Get (string taskId)
 
 
 
@@ -23,22 +24,89 @@ using ProWritingAid.SDK.Model;
 
 namespace Example
 {
-    public class TextPostExample
+    public class GetExample
     {
         public void main()
         {
-            
+            // Configure API key authorization: licenseCode
+            Configuration.Default.ApiKey.Add("licenseCode", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("licenseCode", "Bearer");
+
+            var apiInstance = new TextApi();
+            var taskId = taskId_example;  // string | 
+
+            try
+            {
+                AsyncResponseTextAnalysisResponse result = apiInstance.Get(taskId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TextApi.Get: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **taskId** | **string**|  | 
+
+### Return type
+
+[**AsyncResponseTextAnalysisResponse**](AsyncResponseTextAnalysisResponse.md)
+
+### Authorization
+
+[licenseCode](../README.md#licenseCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="post"></a>
+# **Post**
+> AsyncResponseTextAnalysisResponse Post (TextAnalysisRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ProWritingAid.SDK.Api;
+using ProWritingAid.SDK.Client;
+using ProWritingAid.SDK.Model;
+
+namespace Example
+{
+    public class PostExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: licenseCode
+            Configuration.Default.ApiKey.Add("licenseCode", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("licenseCode", "Bearer");
+
             var apiInstance = new TextApi();
             var request = new TextAnalysisRequest(); // TextAnalysisRequest | 
 
             try
             {
-                TextAnalysisResponse result = apiInstance.TextPost(request);
+                AsyncResponseTextAnalysisResponse result = apiInstance.Post(request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TextApi.TextPost: " + e.Message );
+                Debug.Print("Exception when calling TextApi.Post: " + e.Message );
             }
         }
     }
@@ -53,16 +121,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TextAnalysisResponse**](TextAnalysisResponse.md)
+[**AsyncResponseTextAnalysisResponse**](AsyncResponseTextAnalysisResponse.md)
 
 ### Authorization
 
-No authorization required
+[licenseCode](../README.md#licenseCode)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
- - **Accept**: application/json, text/json, application/xml, text/xml
+ - **Content-Type**: application/json, text/json, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

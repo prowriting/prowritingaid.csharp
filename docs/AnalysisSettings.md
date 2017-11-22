@@ -3,19 +3,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShortestAverageSentenceLength** | **int?** | &lt;remarks&gt;Default is 11&lt;/remarks&gt; | [optional] 
-**LongestAverageSentenceLength** | **int?** | &lt;remarks&gt;Default is 18&lt;/remarks&gt; | [optional] 
-**LongestIndividualSentence** | **int?** | &lt;remarks&gt;Default is 30&lt;/remarks&gt; | [optional] 
-**HighestPassiveIndex** | **int?** | &lt;remarks&gt;Default is 25&lt;/remarks&gt; | [optional] 
-**MaxGlueIndex** | **int?** | &lt;remarks&gt;Default is 40&lt;/remarks&gt; | [optional] 
-**MinSentenceVariety** | **int?** | &lt;remarks&gt;Default is 3&lt;/remarks&gt; | [optional] 
-**HighestPronounPercentage** | **double?** | &lt;remarks&gt;Default is 15&lt;/remarks&gt; | [optional] 
-**LowestPronounPercentage** | **double?** | &lt;remarks&gt;Default is 4&lt;/remarks&gt; | [optional] 
-**HighestAcademicPronounPercentage** | **double?** | &lt;remarks&gt;Default is 2&lt;/remarks&gt; | [optional] 
-**HighestInitialPronounPercentage** | **double?** | &lt;remarks&gt;Default is 30&lt;/remarks&gt; | [optional] 
-**LowestInitialPronounPercentage** | **double?** | &lt;remarks&gt;Default is 0&lt;/remarks&gt; | [optional] 
-**LowestWeWeScore** | **double?** | &lt;remarks&gt;Default is .6&lt;/remarks&gt; | [optional] 
-**LongestAverageParagraphLength** | **double?** | &lt;remarks&gt;Default is 6&lt;/remarks&gt; | [optional] 
+**ShortestAverageSentenceLength** | **int?** |  | [default to 11]
+**LongestAverageSentenceLength** | **int?** |  | [default to 18]
+**LongestIndividualSentence** | **int?** |  | [default to 30]
+**HighestPassiveIndex** | **int?** |  | [default to 25]
+**MaxGlueIndex** | **int?** |  | [default to 40]
+**MinSentenceVariety** | **int?** |  | [default to 3]
+**HighestPronounPercentage** | **double?** |  | [default to 15.0]
+**LowestPronounPercentage** | **double?** |  | [default to 4.0]
+**HighestAcademicPronounPercentage** | **double?** |  | [default to 2.0]
+**HighestInitialPronounPercentage** | **double?** |  | [default to 30.0]
+**LowestInitialPronounPercentage** | **double?** |  | [default to 0.0]
+**LowestWeWeScore** | **double?** |  | [default to 0.6]
+**LongestAverageParagraphLength** | **double?** |  | [default to 6.0]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

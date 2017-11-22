@@ -4,8 +4,8 @@
 
 C# library for the ProWritingAid.API
 
-- API version: v1
-- SDK version: 1.0.0
+- API version: v2
+- SDK version: 2.0.0
 - [Nuget package](https://www.nuget.org/packages/ProWritingAid.SDK/)
 
 ## Frameworks supported
@@ -36,31 +36,33 @@ using ProWritingAid.SDK.Model;
 namespace Example
 {
     public class Example
+    {
+        public void main()
         {
-            public void main()
-            {
                 
-                var api = new TextApi();
-                var request = new TextAnalysisRequest(
-                    "I'd like to by that toy. wood you help me? I have twp more brothers.",
-                    new List<string> {"grammar"},
-                    TextAnalysisRequest.StyleEnum.General,
-                    TextAnalysisRequest.LanguageEnum.En,
-                    new RequestCredentials("00000000-0000-0000-0000-2212FC205139")); 
+            var api = new TextAsyncApi()
+                .SetLicenseCode("00000000-0000-0000-0000-2212FC205139");
+            var request = new TextAnalysisRequest(
+                "I'd like to by that toy. wood you help me? I have twp more brothers.",
+                new List<string> {"grammar"},
+                TextAnalysisRequest.StyleEnum.General,
+                TextAnalysisRequest.LanguageEnum.En); 
     
-                try
-                {
-                    var response = api.TextPost(request);
-                    Debug.WriteLine(response);
-                }
-                catch (Exception e)
-                {
-                    Debug.Print("Exception when calling TextApi.TextPost: " + e.Message );
-                }
+            try
+            {
+                var response = api.Post(request);
+                Debug.WriteLine(response);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TextApi.TextPost: " + e.Message );
             }
         }
+    }
 }
+
 ```
+
 
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
@@ -69,21 +71,16 @@ All URIs are relative to *https://api.prowritingaid.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AsyncContextualThesaurusApi* | [**AsyncContextualThesaurusPost**](docs/AsyncContextualThesaurusApi.md#asynccontextualthesauruspost) | **POST** /api/async/contextualthesaurus | 
-*AsyncContextualThesaurusResultApi* | [**AsyncContextualThesaurusResultGetResult**](docs/AsyncContextualThesaurusResultApi.md#asynccontextualthesaurusresultgetresult) | **GET** /api/async/result/contextualthesaurus/{taskId} | 
-*AsyncHtmlApi* | [**AsyncHtmlPost**](docs/AsyncHtmlApi.md#asynchtmlpost) | **POST** /api/async/html | 
-*AsyncHtmlResultApi* | [**AsyncHtmlResultGetResult**](docs/AsyncHtmlResultApi.md#asynchtmlresultgetresult) | **GET** /api/async/result/html/{taskId} | 
-*AsyncSummaryApi* | [**AsyncSummaryPost**](docs/AsyncSummaryApi.md#asyncsummarypost) | **POST** /api/async/summary | 
-*AsyncSummaryResultApi* | [**AsyncSummaryResultGetResult**](docs/AsyncSummaryResultApi.md#asyncsummaryresultgetresult) | **GET** /api/async/result/summary/{taskId} | 
-*AsyncTextApi* | [**AsyncTextPost**](docs/AsyncTextApi.md#asynctextpost) | **POST** /api/async/text | 
-*AsyncTextResultApi* | [**AsyncTextResultGetResult**](docs/AsyncTextResultApi.md#asynctextresultgetresult) | **GET** /api/async/result/text/{taskId} | 
-*AsyncWordCloudApi* | [**AsyncWordCloudPost**](docs/AsyncWordCloudApi.md#asyncwordcloudpost) | **POST** /api/async/wordcloud | 
-*AsyncWordCloudResultApi* | [**AsyncWordCloudResultGetResult**](docs/AsyncWordCloudResultApi.md#asyncwordcloudresultgetresult) | **GET** /api/async/result/wordcloud/{taskId} | 
-*ContextualThesaurusApi* | [**ContextualThesaurusPost**](docs/ContextualThesaurusApi.md#contextualthesauruspost) | **POST** /api/contextualthesaurus | 
-*HtmlApi* | [**HtmlPost**](docs/HtmlApi.md#htmlpost) | **POST** /api/html | 
-*SummaryApi* | [**SummaryPost**](docs/SummaryApi.md#summarypost) | **POST** /api/summary | 
-*TextApi* | [**TextPost**](docs/TextApi.md#textpost) | **POST** /api/text | 
-*WordCloudApi* | [**WordCloudPost**](docs/WordCloudApi.md#wordcloudpost) | **POST** /api/wordcloud | 
+*ContextualThesaurusApi* | [**Get**](docs/ContextualThesaurusApi.md#get) | **GET** /api/async/contextualthesaurus/result/{taskId} | 
+*ContextualThesaurusApi* | [**Post**](docs/ContextualThesaurusApi.md#post) | **POST** /api/async/contextualthesaurus | 
+*HtmlApi* | [**Get**](docs/HtmlApi.md#get) | **GET** /api/async/html/result/{taskId} | 
+*HtmlApi* | [**Post**](docs/HtmlApi.md#post) | **POST** /api/async/html | 
+*SummaryApi* | [**Get**](docs/SummaryApi.md#get) | **GET** /api/async/summary/result/{taskId} | 
+*SummaryApi* | [**Post**](docs/SummaryApi.md#post) | **POST** /api/async/summary | 
+*TextApi* | [**Get**](docs/TextApi.md#get) | **GET** /api/async/text/result/{taskId} | 
+*TextApi* | [**Post**](docs/TextApi.md#post) | **POST** /api/async/text | 
+*WordCloudApi* | [**Get**](docs/WordCloudApi.md#get) | **GET** /api/async/wordcloud/result/{taskId} | 
+*WordCloudApi* | [**Post**](docs/WordCloudApi.md#post) | **POST** /api/async/wordcloud | 
 
 
 <a name="documentation-for-models"></a>
@@ -114,8 +111,10 @@ Class | Method | HTTP request | Description
  - [Model.WordCloudResponse](docs/WordCloudResponse.md)
 
 
+<a name="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
+<a name="licenseCode"></a>
 ### licenseCode
 
 - **Type**: API key

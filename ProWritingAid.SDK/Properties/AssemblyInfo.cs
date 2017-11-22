@@ -10,10 +10,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Orpheus Technology LTD")]
 [assembly: AssemblyProduct("ProWritingAid.SDK")]
-[assembly: AssemblyCopyright("Copyright © Orpheus Technology LTD 2017")]
+[assembly: AssemblyCopyright("Copyright Â© Orpheus Technology LTD 2017")]
 [assembly: AssemblyTrademark("")]
-[assembly: InternalsVisibleTo("WritingAnalysisAPI")]
-[assembly: InternalsVisibleTo("ProWritingAid.SDK.Test")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
