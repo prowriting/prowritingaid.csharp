@@ -14,7 +14,7 @@
             Initial release of the package
             17.05.2017 Auth with session information support
             18.05.2017 Summary analysis support
-	    31.10.2017 V2 API support Ignore patterns API
+	        31.10.2017 V2 API support Ignore patterns API
         </releaseNotes>
         <copyright>Copyright 2017</copyright>
         <tags>prowritingaid api pwa grammar nlp style spelling rest</tags>
@@ -26,7 +26,7 @@
     <files>
         <file src="bin\Release\ProWritingAid.SDK.*" target="lib\net45" />
         <!-- A readme.txt will be displayed when the package is installed -->
-        <file src="..\..\README.md" target="" />
-        <file src="..\..\docs\**\*.*" target="docs" />
+        <file src="..\README.md" target="" />
+        <file src="..\docs\**\*.*" target="docs" />
     </files>
 </package>
