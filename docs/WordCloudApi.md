@@ -4,8 +4,8 @@ All URIs are relative to *https://api.prowritingaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Get**](WordCloudApi.md#get) | **GET** /api/async/wordcloud/result/{taskId} | 
-[**Post**](WordCloudApi.md#post) | **POST** /api/async/wordcloud | 
+[**Get**](WordCloudApi.md#get) | **GET** /api/async/wordcloud/result/{taskId} | Tries to get the result of a request using the task id of the request
+[**Post**](WordCloudApi.md#post) | **POST** /api/async/wordcloud | Analyses text and returns a word cloud (as an image)
 
 
 <a name="get"></a>
@@ -13,6 +13,7 @@ Method | HTTP request | Description
 > AsyncResponseWordCloudResponse Get (string taskId)
 
 
+Tries to get the result of a request using the task id of the request
 
 ### Example
 ```csharp
@@ -33,6 +34,7 @@ namespace Example
 
             try
             {
+                // Tries to get the result of a request using the task id of the request
                 AsyncResponseWordCloudResponse result = apiInstance.Get(taskId);
                 Debug.WriteLine(result);
             }
@@ -71,6 +73,7 @@ No authorization required
 > AsyncResponseWordCloudResponse Post (WordCloudRequest requestp)
 
 
+Analyses text and returns a word cloud (as an image)
 
 ### Example
 ```csharp
@@ -91,6 +94,7 @@ namespace Example
 
             try
             {
+                // Analyses text and returns a word cloud (as an image)
                 AsyncResponseWordCloudResponse result = apiInstance.Post(requestp);
                 Debug.WriteLine(result);
             }

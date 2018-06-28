@@ -60,9 +60,7 @@ namespace Example
         }
     }
 }
-
 ```
-
 
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
@@ -71,16 +69,17 @@ All URIs are relative to *https://api.prowritingaid.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ContextualThesaurusApi* | [**Get**](docs/ContextualThesaurusApi.md#get) | **GET** /api/async/contextualthesaurus/result/{taskId} | 
-*ContextualThesaurusApi* | [**Post**](docs/ContextualThesaurusApi.md#post) | **POST** /api/async/contextualthesaurus | 
-*HtmlApi* | [**Get**](docs/HtmlApi.md#get) | **GET** /api/async/html/result/{taskId} | 
-*HtmlApi* | [**Post**](docs/HtmlApi.md#post) | **POST** /api/async/html | 
-*SummaryApi* | [**Get**](docs/SummaryApi.md#get) | **GET** /api/async/summary/result/{taskId} | 
-*SummaryApi* | [**Post**](docs/SummaryApi.md#post) | **POST** /api/async/summary | 
-*TextApi* | [**Get**](docs/TextApi.md#get) | **GET** /api/async/text/result/{taskId} | 
-*TextApi* | [**Post**](docs/TextApi.md#post) | **POST** /api/async/text | 
-*WordCloudApi* | [**Get**](docs/WordCloudApi.md#get) | **GET** /api/async/wordcloud/result/{taskId} | 
-*WordCloudApi* | [**Post**](docs/WordCloudApi.md#post) | **POST** /api/async/wordcloud | 
+*ContextualThesaurusApi* | [**Get**](docs/ContextualThesaurusApi.md#get) | **GET** /api/async/contextualthesaurus/result/{taskId} | Tries to get the result of a request using the task id of the request-
+*ContextualThesaurusApi* | [**Post**](docs/ContextualThesaurusApi.md#post) | **POST** /api/async/contextualthesaurus | Analyses text and returns contextual thesaurus entries-
+*HtmlApi* | [**Get**](docs/HtmlApi.md#get) | **GET** /api/async/html/result/{taskId} | Tries to get the result of a request using the task id of the request-
+*HtmlApi* | [**Post**](docs/HtmlApi.md#post) | **POST** /api/async/html | Analyses HTML and adds suggestion tags to it-
+*SummaryApi* | [**Get**](docs/SummaryApi.md#get) | **GET** /api/async/summary/result/{taskId} | Tries to get the result of a request using the task id of the request-
+*SummaryApi* | [**Post**](docs/SummaryApi.md#post) | **POST** /api/async/summary | Gets the summary analysis of a document-
+*TextApi* | [**Get**](docs/TextApi.md#get) | **GET** /api/async/text/result/{taskId} | Tries to get the result of a request using the task id of the request-
+*TextApi* | [**Post**](docs/TextApi.md#post) | **POST** /api/async/text | Analyses html and adds suggestions tags to it-
+*ThesaurusApi* | [**Post**](docs/ThesaurusApi.md#post) | **POST** /api/thesaurus | Returns the thesaurus entries for a specific word-
+*WordCloudApi* | [**Get**](docs/WordCloudApi.md#get) | **GET** /api/async/wordcloud/result/{taskId} | Tries to get the result of a request using the task id of the request-
+*WordCloudApi* | [**Post**](docs/WordCloudApi.md#post) | **POST** /api/async/wordcloud | Analyses text and returns a word cloud (as an image)-
 
 
 <a name="documentation-for-models"></a>
@@ -100,6 +99,7 @@ Class | Method | HTTP request | Description
  - [Model.ContextualThesaurusRequest](docs/ContextualThesaurusRequest.md)
  - [Model.ContextualThesaurusResponse](docs/ContextualThesaurusResponse.md)
  - [Model.DocTag](docs/DocTag.md)
+ - [Model.EntryMeaning](docs/EntryMeaning.md)
  - [Model.HtmlAnalysisRequest](docs/HtmlAnalysisRequest.md)
  - [Model.HtmlAnalysisResponse](docs/HtmlAnalysisResponse.md)
  - [Model.SuggestionCategory](docs/SuggestionCategory.md)
@@ -107,6 +107,8 @@ Class | Method | HTTP request | Description
  - [Model.SummaryAnalysisResponse](docs/SummaryAnalysisResponse.md)
  - [Model.TextAnalysisRequest](docs/TextAnalysisRequest.md)
  - [Model.TextAnalysisResponse](docs/TextAnalysisResponse.md)
+ - [Model.ThesaurusRequest](docs/ThesaurusRequest.md)
+ - [Model.ThesaurusResponse](docs/ThesaurusResponse.md)
  - [Model.WordCloudRequest](docs/WordCloudRequest.md)
  - [Model.WordCloudResponse](docs/WordCloudResponse.md)
 

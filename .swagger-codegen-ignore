@@ -20,7 +20,7 @@
 # For example, you can ignore all files in a docs folder with the file extension .md:
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
-README.md
+#README.md
 ProWritingAid.SDK/ProWritingAid.SDK.nuspec
 ProWritingAid.SDK/ProWritingAid.SDK.csproj
 src/ProWritingAid.SDK.Test/ProWritingAid.SDK.Test.csproj

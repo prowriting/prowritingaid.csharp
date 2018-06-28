@@ -4,8 +4,8 @@ All URIs are relative to *https://api.prowritingaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Get**](SummaryApi.md#get) | **GET** /api/async/summary/result/{taskId} | 
-[**Post**](SummaryApi.md#post) | **POST** /api/async/summary | 
+[**Get**](SummaryApi.md#get) | **GET** /api/async/summary/result/{taskId} | Tries to get the result of a request using the task id of the request
+[**Post**](SummaryApi.md#post) | **POST** /api/async/summary | Gets the summary analysis of a document
 
 
 <a name="get"></a>
@@ -13,6 +13,7 @@ Method | HTTP request | Description
 > AsyncResponseSummaryAnalysisResponse Get (string taskId)
 
 
+Tries to get the result of a request using the task id of the request
 
 ### Example
 ```csharp
@@ -38,6 +39,7 @@ namespace Example
 
             try
             {
+                // Tries to get the result of a request using the task id of the request
                 AsyncResponseSummaryAnalysisResponse result = apiInstance.Get(taskId);
                 Debug.WriteLine(result);
             }
@@ -76,6 +78,7 @@ Name | Type | Description  | Notes
 > AsyncResponseSummaryAnalysisResponse Post (SummaryAnalysisRequest requestp)
 
 
+Gets the summary analysis of a document
 
 ### Example
 ```csharp
@@ -101,6 +104,7 @@ namespace Example
 
             try
             {
+                // Gets the summary analysis of a document
                 AsyncResponseSummaryAnalysisResponse result = apiInstance.Post(requestp);
                 Debug.WriteLine(result);
             }

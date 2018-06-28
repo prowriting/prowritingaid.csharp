@@ -4,8 +4,8 @@ All URIs are relative to *https://api.prowritingaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Get**](ContextualThesaurusApi.md#get) | **GET** /api/async/contextualthesaurus/result/{taskId} | 
-[**Post**](ContextualThesaurusApi.md#post) | **POST** /api/async/contextualthesaurus | 
+[**Get**](ContextualThesaurusApi.md#get) | **GET** /api/async/contextualthesaurus/result/{taskId} | Tries to get the result of a request using the task id of the request
+[**Post**](ContextualThesaurusApi.md#post) | **POST** /api/async/contextualthesaurus | Analyses text and returns contextual thesaurus entries
 
 
 <a name="get"></a>
@@ -13,6 +13,7 @@ Method | HTTP request | Description
 > AsyncResponseContextualThesaurusResponse Get (string taskId)
 
 
+Tries to get the result of a request using the task id of the request
 
 ### Example
 ```csharp
@@ -38,6 +39,7 @@ namespace Example
 
             try
             {
+                // Tries to get the result of a request using the task id of the request
                 AsyncResponseContextualThesaurusResponse result = apiInstance.Get(taskId);
                 Debug.WriteLine(result);
             }
@@ -76,6 +78,7 @@ Name | Type | Description  | Notes
 > AsyncResponseContextualThesaurusResponse Post (ContextualThesaurusRequest requestp)
 
 
+Analyses text and returns contextual thesaurus entries
 
 ### Example
 ```csharp
@@ -101,6 +104,7 @@ namespace Example
 
             try
             {
+                // Analyses text and returns contextual thesaurus entries
                 AsyncResponseContextualThesaurusResponse result = apiInstance.Post(requestp);
                 Debug.WriteLine(result);
             }
