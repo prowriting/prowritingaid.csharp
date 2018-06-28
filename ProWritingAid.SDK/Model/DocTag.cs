@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// DocTag
-    /// </summary>
+    /** 
+    * <summary>DocTag</summary> 
+    */
     [DataContract]
     public partial class DocTag :  IEquatable<DocTag>, IValidatableObject
     {
@@ -50,7 +50,8 @@ namespace ProWritingAid.SDK.Model
         /// <param name="IsSubTag">Identifies that this suggestion is a part of larger one (required).</param>
         /// <param name="HelpId">TODO DOCS.</param>
         /// <param name="Id">Suggestion&#39;s Id.</param>
-        public DocTag(int? StartPos = default(int?), int? EndPos = default(int?), string Report = default(string), List<string> Urls = default(List<string>), string Category = default(string), string CategoryDisplayName = default(string), string Subcategory = default(string), string Hint = default(string), List<string> Suggestions = default(List<string>), bool? IsSubTag = default(bool?), string HelpId = default(string), string Id = default(string))
+        /// <param name="Invisible">Is tag invisible?.</param>
+        public DocTag(int? StartPos = default(int?), int? EndPos = default(int?), string Report = default(string), List<string> Urls = default(List<string>), string Category = default(string), string CategoryDisplayName = default(string), string Subcategory = default(string), string Hint = default(string), List<string> Suggestions = default(List<string>), bool? IsSubTag = default(bool?), string HelpId = default(string), string Id = default(string), bool? Invisible = default(bool?))
         {
             // to ensure "StartPos" is required (not null)
             if (StartPos == null)
@@ -88,6 +89,7 @@ namespace ProWritingAid.SDK.Model
             this.Suggestions = Suggestions;
             this.HelpId = HelpId;
             this.Id = Id;
+            this.Invisible = Invisible;
         }
         
         /// <summary>
@@ -175,6 +177,13 @@ namespace ProWritingAid.SDK.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// Is tag invisible?
+        /// </summary>
+        /// <value>Is tag invisible?</value>
+        [DataMember(Name="invisible", EmitDefaultValue=false)]
+        public bool? Invisible { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -194,6 +203,7 @@ namespace ProWritingAid.SDK.Model
             sb.Append("  IsSubTag: ").Append(IsSubTag).Append("\n");
             sb.Append("  HelpId: ").Append(HelpId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Invisible: ").Append(Invisible).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -289,6 +299,11 @@ namespace ProWritingAid.SDK.Model
                     this.Id == other.Id ||
                     this.Id != null &&
                     this.Id.Equals(other.Id)
+                ) && 
+                (
+                    this.Invisible == other.Invisible ||
+                    this.Invisible != null &&
+                    this.Invisible.Equals(other.Invisible)
                 );
         }
 
@@ -327,6 +342,8 @@ namespace ProWritingAid.SDK.Model
                     hash = hash * 59 + this.HelpId.GetHashCode();
                 if (this.Id != null)
                     hash = hash * 59 + this.Id.GetHashCode();
+                if (this.Invisible != null)
+                    hash = hash * 59 + this.Invisible.GetHashCode();
                 return hash;
             }
         }

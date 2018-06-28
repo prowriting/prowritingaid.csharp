@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// WordCloudRequest
-    /// </summary>
+    /** 
+    * <summary>WordCloudRequest</summary> 
+    */
     [DataContract]
     public partial class WordCloudRequest :  IEquatable<WordCloudRequest>, IValidatableObject
     {
@@ -166,9 +166,9 @@ namespace ProWritingAid.SDK.Model
         }
 
         /// <summary>
-        /// Document&#39;s language  Set correct UK/US language to get region-specific suggestions
+        /// Document&#39;s language. Set correct UK/US language to get region-specific suggestions
         /// </summary>
-        /// <value>Document&#39;s language  Set correct UK/US language to get region-specific suggestions</value>
+        /// <value>Document&#39;s language. Set correct UK/US language to get region-specific suggestions</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LanguageEnum
         {
@@ -217,9 +217,9 @@ namespace ProWritingAid.SDK.Model
         [DataMember(Name="Style", EmitDefaultValue=false)]
         public StyleEnum? Style { get; set; }
         /// <summary>
-        /// Document&#39;s language  Set correct UK/US language to get region-specific suggestions
+        /// Document&#39;s language. Set correct UK/US language to get region-specific suggestions
         /// </summary>
-        /// <value>Document&#39;s language  Set correct UK/US language to get region-specific suggestions</value>
+        /// <value>Document&#39;s language. Set correct UK/US language to get region-specific suggestions</value>
         [DataMember(Name="Language", EmitDefaultValue=false)]
         public LanguageEnum? Language { get; set; }
         /// <summary>
@@ -241,7 +241,7 @@ namespace ProWritingAid.SDK.Model
         /// <param name="Height">The height of the image to produce (required) (default to 200).</param>
         /// <param name="OnlySentimentWords">Only use the sentiment words from the text (required) (default to false).</param>
         /// <param name="Style">Document&#39;s writing style (required) (default to StyleEnum.General).</param>
-        /// <param name="Language">Document&#39;s language  Set correct UK/US language to get region-specific suggestions (required) (default to LanguageEnum.En).</param>
+        /// <param name="Language">Document&#39;s language. Set correct UK/US language to get region-specific suggestions (required) (default to LanguageEnum.En).</param>
         public WordCloudRequest(string Text = default(string), OrientationEnum? Orientation = OrientationEnum.EveryWhichWay, CaseMethodEnum? CaseMethod = CaseMethodEnum.IntelligentCase, string PaletteName = "ProWritingAid", int? MaximumWordCount = 100, bool? RemoveCommonWords = true, string FontName = "Arial", int? Width = 200, int? Height = 200, bool? OnlySentimentWords = false, StyleEnum? Style = StyleEnum.General, LanguageEnum? Language = LanguageEnum.En)
         {
             // to ensure "Text" is required (not null)

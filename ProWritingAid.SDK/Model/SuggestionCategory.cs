@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// SuggestionCategory
-    /// </summary>
+    /** 
+    * <summary>SuggestionCategory</summary> 
+    */
     [DataContract]
     public partial class SuggestionCategory :  IEquatable<SuggestionCategory>, IValidatableObject
     {

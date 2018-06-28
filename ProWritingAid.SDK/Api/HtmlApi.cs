@@ -52,9 +52,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>AsyncResponseHtmlAnalysisResponse</returns>
-        AsyncResponseHtmlAnalysisResponse Post (HtmlAnalysisRequest request);
+        AsyncResponseHtmlAnalysisResponse Post (HtmlAnalysisRequest requestp);
 
         /// <summary>
         /// 
@@ -63,9 +63,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>ApiResponse of AsyncResponseHtmlAnalysisResponse</returns>
-        ApiResponse<AsyncResponseHtmlAnalysisResponse> PostWithHttpInfo (HtmlAnalysisRequest request);
+        ApiResponse<AsyncResponseHtmlAnalysisResponse> PostWithHttpInfo (HtmlAnalysisRequest requestp);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -96,9 +96,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of AsyncResponseHtmlAnalysisResponse</returns>
-        System.Threading.Tasks.Task<AsyncResponseHtmlAnalysisResponse> PostAsync (HtmlAnalysisRequest request);
+        System.Threading.Tasks.Task<AsyncResponseHtmlAnalysisResponse> PostAsync (HtmlAnalysisRequest requestp);
 
         /// <summary>
         /// 
@@ -107,9 +107,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of ApiResponse (AsyncResponseHtmlAnalysisResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AsyncResponseHtmlAnalysisResponse>> PostAsyncWithHttpInfo (HtmlAnalysisRequest request);
+        System.Threading.Tasks.Task<ApiResponse<AsyncResponseHtmlAnalysisResponse>> PostAsyncWithHttpInfo (HtmlAnalysisRequest requestp);
         #endregion Asynchronous Operations
     }
 
@@ -372,11 +372,11 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>AsyncResponseHtmlAnalysisResponse</returns>
-        public AsyncResponseHtmlAnalysisResponse Post (HtmlAnalysisRequest request)
+        public AsyncResponseHtmlAnalysisResponse Post (HtmlAnalysisRequest requestp)
         {
-             ApiResponse<AsyncResponseHtmlAnalysisResponse> localVarResponse = PostWithHttpInfo(request);
+             ApiResponse<AsyncResponseHtmlAnalysisResponse> localVarResponse = PostWithHttpInfo(requestp);
              return localVarResponse.Data;
         }
 
@@ -384,13 +384,13 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>ApiResponse of AsyncResponseHtmlAnalysisResponse</returns>
-        public ApiResponse< AsyncResponseHtmlAnalysisResponse > PostWithHttpInfo (HtmlAnalysisRequest request)
+        public ApiResponse< AsyncResponseHtmlAnalysisResponse > PostWithHttpInfo (HtmlAnalysisRequest requestp)
         {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling HtmlApi->Post");
+            // verify the required parameter 'requestp' is set
+            if (requestp == null)
+                throw new ApiException(400, "Missing required parameter 'requestp' when calling HtmlApi->Post");
 
             var localVarPath = "/api/async/html";
             var localVarPathParams = new Dictionary<String, String>();
@@ -417,13 +417,13 @@ namespace ProWritingAid.SDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (request != null && request.GetType() != typeof(byte[]))
+            if (requestp != null && requestp.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(requestp); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = request; // byte array
+                localVarPostBody = requestp; // byte array
             }
 
             // authentication (licenseCode) required
@@ -455,11 +455,11 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of AsyncResponseHtmlAnalysisResponse</returns>
-        public async System.Threading.Tasks.Task<AsyncResponseHtmlAnalysisResponse> PostAsync (HtmlAnalysisRequest request)
+        public async System.Threading.Tasks.Task<AsyncResponseHtmlAnalysisResponse> PostAsync (HtmlAnalysisRequest requestp)
         {
-             ApiResponse<AsyncResponseHtmlAnalysisResponse> localVarResponse = await PostAsyncWithHttpInfo(request);
+             ApiResponse<AsyncResponseHtmlAnalysisResponse> localVarResponse = await PostAsyncWithHttpInfo(requestp);
              return localVarResponse.Data;
 
         }
@@ -468,13 +468,13 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of ApiResponse (AsyncResponseHtmlAnalysisResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseHtmlAnalysisResponse>> PostAsyncWithHttpInfo (HtmlAnalysisRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseHtmlAnalysisResponse>> PostAsyncWithHttpInfo (HtmlAnalysisRequest requestp)
         {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling HtmlApi->Post");
+            // verify the required parameter 'requestp' is set
+            if (requestp == null)
+                throw new ApiException(400, "Missing required parameter 'requestp' when calling HtmlApi->Post");
 
             var localVarPath = "/api/async/html";
             var localVarPathParams = new Dictionary<String, String>();
@@ -501,13 +501,13 @@ namespace ProWritingAid.SDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (request != null && request.GetType() != typeof(byte[]))
+            if (requestp != null && requestp.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(requestp); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = request; // byte array
+                localVarPostBody = requestp; // byte array
             }
 
             // authentication (licenseCode) required

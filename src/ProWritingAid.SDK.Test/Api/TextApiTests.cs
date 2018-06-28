@@ -12,12 +12,11 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using Newtonsoft.Json;
 using RestSharp;
 using NUnit.Framework;
+
 using ProWritingAid.SDK.Client;
 using ProWritingAid.SDK.Api;
 using ProWritingAid.SDK.Model;
@@ -40,13 +39,19 @@ namespace ProWritingAid.SDK.Test
         /// Setup before each unit test
         /// </summary>
         [SetUp]
-        public void Init() { instance = new TextApi(); }
+        public void Init()
+        {
+            instance = new TextApi();
+        }
 
         /// <summary>
         /// Clean up after each unit test
         /// </summary>
         [TearDown]
-        public void Cleanup() { }
+        public void Cleanup()
+        {
+
+        }
 
         /// <summary>
         /// Test an instance of TextApi
@@ -58,31 +63,19 @@ namespace ProWritingAid.SDK.Test
             //Assert.IsInstanceOfType(typeof(TextApi), instance, "instance is a TextApi");
         }
 
+        
         /// <summary>
         /// Test Get
         /// </summary>
         [Test]
         public void GetTest()
         {
-            var api = new TextAsyncApi()
-                .SetLicenseCode("00000000-0000-0000-0000-000000000000");
-            var request = new TextAnalysisRequest(
-                "I'd like to by that toy. wood you help me? I have twp more brothers.",
-                new List<string> {"grammar"},
-                TextAnalysisRequest.StyleEnum.General,
-                TextAnalysisRequest.LanguageEnum.En);
-
-            try
-            {
-                var response = api.Post(request);
-                Debug.WriteLine(JsonConvert.SerializeObject(response, Formatting.Indented));
-            } catch (Exception e)
-            {
-                Debug.Print("Exception when calling TextApi.TextPost: " + e.Message);
-                throw;
-            }
+            // TODO uncomment below to test the method and replace null with proper value
+            //string taskId = null;
+            //var response = instance.Get(taskId);
+            //Assert.IsInstanceOf<AsyncResponseTextAnalysisResponse> (response, "response is AsyncResponseTextAnalysisResponse");
         }
-
+        
         /// <summary>
         /// Test Post
         /// </summary>
@@ -94,5 +87,7 @@ namespace ProWritingAid.SDK.Test
             //var response = instance.Post(request);
             //Assert.IsInstanceOf<AsyncResponseTextAnalysisResponse> (response, "response is AsyncResponseTextAnalysisResponse");
         }
+        
     }
+
 }

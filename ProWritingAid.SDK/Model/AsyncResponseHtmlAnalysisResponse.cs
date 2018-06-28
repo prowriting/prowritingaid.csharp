@@ -24,16 +24,16 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// Asynchronous request
-    /// </summary>
+    /** 
+    * <summary>Asynchronous request</summary> 
+    */
     [DataContract]
     public partial class AsyncResponseHtmlAnalysisResponse :  IEquatable<AsyncResponseHtmlAnalysisResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AsyncResponseHtmlAnalysisResponse" /> class.
         /// </summary>
-        /// <param name="TaskId">Async task Id  Empty or null if task was processed synchronously.</param>
+        /// <param name="TaskId">Async task Id. Empty or null if task was processed synchronously.</param>
         /// <param name="Result">Actual response.</param>
         public AsyncResponseHtmlAnalysisResponse(string TaskId = default(string), HtmlAnalysisResponse Result = default(HtmlAnalysisResponse))
         {
@@ -42,9 +42,9 @@ namespace ProWritingAid.SDK.Model
         }
         
         /// <summary>
-        /// Async task Id  Empty or null if task was processed synchronously
+        /// Async task Id. Empty or null if task was processed synchronously
         /// </summary>
-        /// <value>Async task Id  Empty or null if task was processed synchronously</value>
+        /// <value>Async task Id. Empty or null if task was processed synchronously</value>
         [DataMember(Name="TaskId", EmitDefaultValue=false)]
         public string TaskId { get; set; }
 

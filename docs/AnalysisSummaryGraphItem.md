@@ -1,4 +1,5 @@
 # ProWritingAid.SDK.Model.AnalysisSummaryGraphItem
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -9,6 +10,8 @@ Name | Type | Description | Notes
 **SubCategory** | **string** |  | [optional] 
 **Index** | **int?** |  | [optional] 
 **Id** | **string** |  | [optional] 
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

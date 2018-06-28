@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// AnalysisSummarySubItem
-    /// </summary>
+    /** 
+    * <summary>AnalysisSummarySubItem</summary> 
+    */
     [DataContract]
     public partial class AnalysisSummarySubItem :  IEquatable<AnalysisSummarySubItem>, IValidatableObject
     {

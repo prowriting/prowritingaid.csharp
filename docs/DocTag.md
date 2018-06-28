@@ -1,4 +1,5 @@
 # ProWritingAid.SDK.Model.DocTag
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -15,6 +16,9 @@ Name | Type | Description | Notes
 **IsSubTag** | **bool?** | Identifies that this suggestion is a part of larger one | 
 **HelpId** | **string** | TODO DOCS | [optional] 
 **Id** | **string** | Suggestion&#39;s Id | [optional] 
+**Invisible** | **bool?** | Is tag invisible? | [optional] 
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

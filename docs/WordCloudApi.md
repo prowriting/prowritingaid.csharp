@@ -68,7 +68,7 @@ No authorization required
 
 <a name="post"></a>
 # **Post**
-> AsyncResponseWordCloudResponse Post (WordCloudRequest request)
+> AsyncResponseWordCloudResponse Post (WordCloudRequest requestp)
 
 
 
@@ -87,11 +87,11 @@ namespace Example
         public void main()
         {
             var apiInstance = new WordCloudApi();
-            var request = new WordCloudRequest(); // WordCloudRequest | 
+            var requestp = new WordCloudRequest(); // WordCloudRequest | 
 
             try
             {
-                AsyncResponseWordCloudResponse result = apiInstance.Post(request);
+                AsyncResponseWordCloudResponse result = apiInstance.Post(requestp);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -107,7 +107,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**WordCloudRequest**](WordCloudRequest.md)|  | 
+ **requestp** | [**WordCloudRequest**](WordCloudRequest.md)|  | 
 
 ### Return type
 

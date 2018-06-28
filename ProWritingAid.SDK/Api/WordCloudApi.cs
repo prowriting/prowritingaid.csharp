@@ -52,9 +52,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>AsyncResponseWordCloudResponse</returns>
-        AsyncResponseWordCloudResponse Post (WordCloudRequest request);
+        AsyncResponseWordCloudResponse Post (WordCloudRequest requestp);
 
         /// <summary>
         /// 
@@ -63,9 +63,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>ApiResponse of AsyncResponseWordCloudResponse</returns>
-        ApiResponse<AsyncResponseWordCloudResponse> PostWithHttpInfo (WordCloudRequest request);
+        ApiResponse<AsyncResponseWordCloudResponse> PostWithHttpInfo (WordCloudRequest requestp);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -96,9 +96,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of AsyncResponseWordCloudResponse</returns>
-        System.Threading.Tasks.Task<AsyncResponseWordCloudResponse> PostAsync (WordCloudRequest request);
+        System.Threading.Tasks.Task<AsyncResponseWordCloudResponse> PostAsync (WordCloudRequest requestp);
 
         /// <summary>
         /// 
@@ -107,9 +107,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of ApiResponse (AsyncResponseWordCloudResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AsyncResponseWordCloudResponse>> PostAsyncWithHttpInfo (WordCloudRequest request);
+        System.Threading.Tasks.Task<ApiResponse<AsyncResponseWordCloudResponse>> PostAsyncWithHttpInfo (WordCloudRequest requestp);
         #endregion Asynchronous Operations
     }
 
@@ -361,11 +361,11 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>AsyncResponseWordCloudResponse</returns>
-        public AsyncResponseWordCloudResponse Post (WordCloudRequest request)
+        public AsyncResponseWordCloudResponse Post (WordCloudRequest requestp)
         {
-             ApiResponse<AsyncResponseWordCloudResponse> localVarResponse = PostWithHttpInfo(request);
+             ApiResponse<AsyncResponseWordCloudResponse> localVarResponse = PostWithHttpInfo(requestp);
              return localVarResponse.Data;
         }
 
@@ -373,13 +373,13 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>ApiResponse of AsyncResponseWordCloudResponse</returns>
-        public ApiResponse< AsyncResponseWordCloudResponse > PostWithHttpInfo (WordCloudRequest request)
+        public ApiResponse< AsyncResponseWordCloudResponse > PostWithHttpInfo (WordCloudRequest requestp)
         {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling WordCloudApi->Post");
+            // verify the required parameter 'requestp' is set
+            if (requestp == null)
+                throw new ApiException(400, "Missing required parameter 'requestp' when calling WordCloudApi->Post");
 
             var localVarPath = "/api/async/wordcloud";
             var localVarPathParams = new Dictionary<String, String>();
@@ -406,13 +406,13 @@ namespace ProWritingAid.SDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (request != null && request.GetType() != typeof(byte[]))
+            if (requestp != null && requestp.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(requestp); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = request; // byte array
+                localVarPostBody = requestp; // byte array
             }
 
 
@@ -438,11 +438,11 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of AsyncResponseWordCloudResponse</returns>
-        public async System.Threading.Tasks.Task<AsyncResponseWordCloudResponse> PostAsync (WordCloudRequest request)
+        public async System.Threading.Tasks.Task<AsyncResponseWordCloudResponse> PostAsync (WordCloudRequest requestp)
         {
-             ApiResponse<AsyncResponseWordCloudResponse> localVarResponse = await PostAsyncWithHttpInfo(request);
+             ApiResponse<AsyncResponseWordCloudResponse> localVarResponse = await PostAsyncWithHttpInfo(requestp);
              return localVarResponse.Data;
 
         }
@@ -451,13 +451,13 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of ApiResponse (AsyncResponseWordCloudResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseWordCloudResponse>> PostAsyncWithHttpInfo (WordCloudRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseWordCloudResponse>> PostAsyncWithHttpInfo (WordCloudRequest requestp)
         {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling WordCloudApi->Post");
+            // verify the required parameter 'requestp' is set
+            if (requestp == null)
+                throw new ApiException(400, "Missing required parameter 'requestp' when calling WordCloudApi->Post");
 
             var localVarPath = "/api/async/wordcloud";
             var localVarPathParams = new Dictionary<String, String>();
@@ -484,13 +484,13 @@ namespace ProWritingAid.SDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (request != null && request.GetType() != typeof(byte[]))
+            if (requestp != null && requestp.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(requestp); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = request; // byte array
+                localVarPostBody = requestp; // byte array
             }
 
 

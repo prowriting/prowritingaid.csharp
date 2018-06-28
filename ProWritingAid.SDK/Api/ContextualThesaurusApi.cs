@@ -52,9 +52,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>AsyncResponseContextualThesaurusResponse</returns>
-        AsyncResponseContextualThesaurusResponse Post (ContextualThesaurusRequest request);
+        AsyncResponseContextualThesaurusResponse Post (ContextualThesaurusRequest requestp);
 
         /// <summary>
         /// 
@@ -63,9 +63,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>ApiResponse of AsyncResponseContextualThesaurusResponse</returns>
-        ApiResponse<AsyncResponseContextualThesaurusResponse> PostWithHttpInfo (ContextualThesaurusRequest request);
+        ApiResponse<AsyncResponseContextualThesaurusResponse> PostWithHttpInfo (ContextualThesaurusRequest requestp);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -96,9 +96,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of AsyncResponseContextualThesaurusResponse</returns>
-        System.Threading.Tasks.Task<AsyncResponseContextualThesaurusResponse> PostAsync (ContextualThesaurusRequest request);
+        System.Threading.Tasks.Task<AsyncResponseContextualThesaurusResponse> PostAsync (ContextualThesaurusRequest requestp);
 
         /// <summary>
         /// 
@@ -107,9 +107,9 @@ namespace ProWritingAid.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of ApiResponse (AsyncResponseContextualThesaurusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AsyncResponseContextualThesaurusResponse>> PostAsyncWithHttpInfo (ContextualThesaurusRequest request);
+        System.Threading.Tasks.Task<ApiResponse<AsyncResponseContextualThesaurusResponse>> PostAsyncWithHttpInfo (ContextualThesaurusRequest requestp);
         #endregion Asynchronous Operations
     }
 
@@ -372,11 +372,11 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>AsyncResponseContextualThesaurusResponse</returns>
-        public AsyncResponseContextualThesaurusResponse Post (ContextualThesaurusRequest request)
+        public AsyncResponseContextualThesaurusResponse Post (ContextualThesaurusRequest requestp)
         {
-             ApiResponse<AsyncResponseContextualThesaurusResponse> localVarResponse = PostWithHttpInfo(request);
+             ApiResponse<AsyncResponseContextualThesaurusResponse> localVarResponse = PostWithHttpInfo(requestp);
              return localVarResponse.Data;
         }
 
@@ -384,13 +384,13 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>ApiResponse of AsyncResponseContextualThesaurusResponse</returns>
-        public ApiResponse< AsyncResponseContextualThesaurusResponse > PostWithHttpInfo (ContextualThesaurusRequest request)
+        public ApiResponse< AsyncResponseContextualThesaurusResponse > PostWithHttpInfo (ContextualThesaurusRequest requestp)
         {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling ContextualThesaurusApi->Post");
+            // verify the required parameter 'requestp' is set
+            if (requestp == null)
+                throw new ApiException(400, "Missing required parameter 'requestp' when calling ContextualThesaurusApi->Post");
 
             var localVarPath = "/api/async/contextualthesaurus";
             var localVarPathParams = new Dictionary<String, String>();
@@ -417,13 +417,13 @@ namespace ProWritingAid.SDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (request != null && request.GetType() != typeof(byte[]))
+            if (requestp != null && requestp.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(requestp); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = request; // byte array
+                localVarPostBody = requestp; // byte array
             }
 
             // authentication (licenseCode) required
@@ -455,11 +455,11 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of AsyncResponseContextualThesaurusResponse</returns>
-        public async System.Threading.Tasks.Task<AsyncResponseContextualThesaurusResponse> PostAsync (ContextualThesaurusRequest request)
+        public async System.Threading.Tasks.Task<AsyncResponseContextualThesaurusResponse> PostAsync (ContextualThesaurusRequest requestp)
         {
-             ApiResponse<AsyncResponseContextualThesaurusResponse> localVarResponse = await PostAsyncWithHttpInfo(request);
+             ApiResponse<AsyncResponseContextualThesaurusResponse> localVarResponse = await PostAsyncWithHttpInfo(requestp);
              return localVarResponse.Data;
 
         }
@@ -468,13 +468,13 @@ namespace ProWritingAid.SDK.Api
         ///  
         /// </summary>
         /// <exception cref="ProWritingAid.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="requestp"></param>
         /// <returns>Task of ApiResponse (AsyncResponseContextualThesaurusResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseContextualThesaurusResponse>> PostAsyncWithHttpInfo (ContextualThesaurusRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<AsyncResponseContextualThesaurusResponse>> PostAsyncWithHttpInfo (ContextualThesaurusRequest requestp)
         {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling ContextualThesaurusApi->Post");
+            // verify the required parameter 'requestp' is set
+            if (requestp == null)
+                throw new ApiException(400, "Missing required parameter 'requestp' when calling ContextualThesaurusApi->Post");
 
             var localVarPath = "/api/async/contextualthesaurus";
             var localVarPathParams = new Dictionary<String, String>();
@@ -501,13 +501,13 @@ namespace ProWritingAid.SDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (request != null && request.GetType() != typeof(byte[]))
+            if (requestp != null && requestp.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(requestp); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = request; // byte array
+                localVarPostBody = requestp; // byte array
             }
 
             // authentication (licenseCode) required

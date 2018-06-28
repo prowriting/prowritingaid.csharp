@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// HtmlAnalysisResponse
-    /// </summary>
+    /** 
+    * <summary>HtmlAnalysisResponse</summary> 
+    */
     [DataContract]
     public partial class HtmlAnalysisResponse :  IEquatable<HtmlAnalysisResponse>, IValidatableObject
     {
@@ -38,7 +38,7 @@ namespace ProWritingAid.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="HtmlAnalysisResponse" /> class.
         /// </summary>
-        /// <param name="Html">Result in form of html.  Contains tags with meta-information (required).</param>
+        /// <param name="Html">Result in form of html. Contains tags with meta-information (required).</param>
         /// <param name="WordCount">Number of processed words (required).</param>
         /// <param name="Summaries"> (required).</param>
         public HtmlAnalysisResponse(string Html = default(string), int? WordCount = default(int?), List<AnalysisSummary> Summaries = default(List<AnalysisSummary>))
@@ -73,9 +73,9 @@ namespace ProWritingAid.SDK.Model
         }
         
         /// <summary>
-        /// Result in form of html.  Contains tags with meta-information
+        /// Result in form of html. Contains tags with meta-information
         /// </summary>
-        /// <value>Result in form of html.  Contains tags with meta-information</value>
+        /// <value>Result in form of html. Contains tags with meta-information</value>
         [DataMember(Name="Html", EmitDefaultValue=false)]
         public string Html { get; set; }
 

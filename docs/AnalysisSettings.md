@@ -1,4 +1,5 @@
 # ProWritingAid.SDK.Model.AnalysisSettings
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -16,6 +17,8 @@ Name | Type | Description | Notes
 **LowestInitialPronounPercentage** | **double?** |  | [default to 0.0]
 **LowestWeWeScore** | **double?** |  | [default to 0.6]
 **LongestAverageParagraphLength** | **double?** |  | [default to 6.0]
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

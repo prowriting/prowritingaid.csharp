@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 ProWritingAid API V2
 
@@ -37,6 +37,9 @@ Contact: hello@prowritingaid.com
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,15 +55,62 @@ Contact: hello@prowritingaid.com
       <HintPath Condition="Exists('..\..\packages')">..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp">
-      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-      <HintPath Condition="Exists('..\packages')">..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-      <HintPath Condition="Exists('..\..\packages')">..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" Exclude="obj\**" />
+    <Compile Include="Api\ContextualThesaurusApi.cs" />
+    <Compile Include="Api\HtmlApi.cs" />
+    <Compile Include="Api\SummaryApi.cs" />
+    <Compile Include="Api\TextApi.cs" />
+    <Compile Include="Api\ThesaurusApi.cs" />
+    <Compile Include="Api\WordCloudApi.cs" />
+    <Compile Include="Client\ApiClient.cs" />
+    <Compile Include="Client\ApiException.cs" />
+    <Compile Include="Client\ApiResponse.cs" />
+    <Compile Include="Client\Configuration.cs" />
+    <Compile Include="Client\ExceptionFactory.cs" />
+    <Compile Include="Client\GlobalConfiguration.cs" />
+    <Compile Include="Client\IApiAccessor.cs" />
+    <Compile Include="Client\IReadableConfiguration.cs" />
+    <Compile Include="Client\JsonSubTypes.cs" />
+    <Compile Include="Client\SwaggerDateConverter.cs" />
+    <Compile Include="Extended\ApiExtensions.cs" />
+    <Compile Include="Extended\ApiHeaders.cs" />
+    <Compile Include="Extended\IAsyncResponse.cs" />
+    <Compile Include="Extended\PartialApis.cs" />
+    <Compile Include="Extended\PartialResponses.cs" />
+    <Compile Include="Extended\PollingApi.cs" />
+    <Compile Include="Model\AnalysisSettings.cs" />
+    <Compile Include="Model\AnalysisSummary.cs" />
+    <Compile Include="Model\AnalysisSummaryGraph.cs" />
+    <Compile Include="Model\AnalysisSummaryGraphItem.cs" />
+    <Compile Include="Model\AnalysisSummaryItem.cs" />
+    <Compile Include="Model\AnalysisSummarySubItem.cs" />
+    <Compile Include="Model\AsyncResponseContextualThesaurusResponse.cs" />
+    <Compile Include="Model\AsyncResponseHtmlAnalysisResponse.cs" />
+    <Compile Include="Model\AsyncResponseSummaryAnalysisResponse.cs" />
+    <Compile Include="Model\AsyncResponseTextAnalysisResponse.cs" />
+    <Compile Include="Model\AsyncResponseWordCloudResponse.cs" />
+    <Compile Include="Model\ContextualThesaurusRequest.cs" />
+    <Compile Include="Model\ContextualThesaurusResponse.cs" />
+    <Compile Include="Model\DocTag.cs" />
+    <Compile Include="Model\EntryMeaning.cs" />
+    <Compile Include="Model\HtmlAnalysisRequest.cs" />
+    <Compile Include="Model\HtmlAnalysisResponse.cs" />
+    <Compile Include="Model\HttpStatusCodeResult.cs" />
+    <Compile Include="Model\Report.cs" />
+    <Compile Include="Model\Response.cs" />
+    <Compile Include="Model\SuggestionCategory.cs" />
+    <Compile Include="Model\SummaryAnalysisRequest.cs" />
+    <Compile Include="Model\SummaryAnalysisResponse.cs" />
+    <Compile Include="Model\TextAnalysisRequest.cs" />
+    <Compile Include="Model\TextAnalysisResponse.cs" />
+    <Compile Include="Model\ThesaurusRequest.cs" />
+    <Compile Include="Model\ThesaurusResponse.cs" />
+    <Compile Include="Model\TupleInt32String.cs" />
+    <Compile Include="Model\UserDocument.cs" />
+    <Compile Include="Model\WordCloudRequest.cs" />
+    <Compile Include="Model\WordCloudResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

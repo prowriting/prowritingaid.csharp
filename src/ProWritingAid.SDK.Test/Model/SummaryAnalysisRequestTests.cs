@@ -19,7 +19,6 @@ using ProWritingAid.SDK.Api;
 using ProWritingAid.SDK.Model;
 using ProWritingAid.SDK.Client;
 using System.Reflection;
-using Newtonsoft.Json;
 
 namespace ProWritingAid.SDK.Test
 {
@@ -64,7 +63,6 @@ namespace ProWritingAid.SDK.Test
             // TODO uncomment below to test "IsInstanceOfType" SummaryAnalysisRequest
             //Assert.IsInstanceOfType<SummaryAnalysisRequest> (instance, "variable 'instance' is a SummaryAnalysisRequest");
         }
-
 
         /// <summary>
         /// Test the property 'Text'

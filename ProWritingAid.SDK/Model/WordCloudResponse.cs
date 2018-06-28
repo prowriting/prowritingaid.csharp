@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// WordCloudResponse
-    /// </summary>
+    /** 
+    * <summary>WordCloudResponse</summary> 
+    */
     [DataContract]
     public partial class WordCloudResponse :  IEquatable<WordCloudResponse>, IValidatableObject
     {

@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// ContextualThesaurusRequest
-    /// </summary>
+    /** 
+    * <summary>ContextualThesaurusRequest</summary> 
+    */
     [DataContract]
     public partial class ContextualThesaurusRequest :  IEquatable<ContextualThesaurusRequest>, IValidatableObject
     {

@@ -1,4 +1,5 @@
 # ProWritingAid.SDK.Model.AnalysisSummaryItem
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -12,6 +13,8 @@ Name | Type | Description | Notes
 **Category** | [**SuggestionCategory**](SuggestionCategory.md) |  | [optional] 
 **CategoryName** | **string** |  | [optional] 
 **NumIssues** | **int?** |  | [optional] 
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

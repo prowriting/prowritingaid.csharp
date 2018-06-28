@@ -24,9 +24,9 @@ using SwaggerDateConverter = ProWritingAid.SDK.Client.SwaggerDateConverter;
 
 namespace ProWritingAid.SDK.Model
 {
-    /// <summary>
-    /// SummaryAnalysisRequest
-    /// </summary>
+    /** 
+    * <summary>SummaryAnalysisRequest</summary> 
+    */
     [DataContract]
     public partial class SummaryAnalysisRequest :  IEquatable<SummaryAnalysisRequest>, IValidatableObject
     {
@@ -88,9 +88,9 @@ namespace ProWritingAid.SDK.Model
         }
 
         /// <summary>
-        /// Document&#39;s language  Set correct UK/US language to get region-specific suggestions
+        /// Document&#39;s language. Set correct UK/US language to get region-specific suggestions
         /// </summary>
-        /// <value>Document&#39;s language  Set correct UK/US language to get region-specific suggestions</value>
+        /// <value>Document&#39;s language. Set correct UK/US language to get region-specific suggestions</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LanguageEnum
         {
@@ -127,9 +127,9 @@ namespace ProWritingAid.SDK.Model
         [DataMember(Name="Style", EmitDefaultValue=false)]
         public StyleEnum? Style { get; set; }
         /// <summary>
-        /// Document&#39;s language  Set correct UK/US language to get region-specific suggestions
+        /// Document&#39;s language. Set correct UK/US language to get region-specific suggestions
         /// </summary>
-        /// <value>Document&#39;s language  Set correct UK/US language to get region-specific suggestions</value>
+        /// <value>Document&#39;s language. Set correct UK/US language to get region-specific suggestions</value>
         [DataMember(Name="Language", EmitDefaultValue=false)]
         public LanguageEnum? Language { get; set; }
         /// <summary>
@@ -143,7 +143,7 @@ namespace ProWritingAid.SDK.Model
         /// <param name="Text">Text to be analyzed (required).</param>
         /// <param name="Settings">Analysis settings (required).</param>
         /// <param name="Style">Document&#39;s writing style (required) (default to StyleEnum.General).</param>
-        /// <param name="Language">Document&#39;s language  Set correct UK/US language to get region-specific suggestions (required) (default to LanguageEnum.En).</param>
+        /// <param name="Language">Document&#39;s language. Set correct UK/US language to get region-specific suggestions (required) (default to LanguageEnum.En).</param>
         public SummaryAnalysisRequest(string Text = default(string), AnalysisSettings Settings = default(AnalysisSettings), StyleEnum? Style = StyleEnum.General, LanguageEnum? Language = LanguageEnum.En)
         {
             // to ensure "Text" is required (not null)

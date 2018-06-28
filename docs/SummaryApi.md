@@ -29,9 +29,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: licenseCode
-            Configuration.Default.ApiKey.Add("licenseCode", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("licenseCode", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("licenseCode", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("licenseCode", "Bearer");
 
             var apiInstance = new SummaryApi();
             var taskId = taskId_example;  // string | 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 <a name="post"></a>
 # **Post**
-> AsyncResponseSummaryAnalysisResponse Post (SummaryAnalysisRequest request)
+> AsyncResponseSummaryAnalysisResponse Post (SummaryAnalysisRequest requestp)
 
 
 
@@ -92,16 +92,16 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: licenseCode
-            Configuration.Default.ApiKey.Add("licenseCode", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("licenseCode", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("licenseCode", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("licenseCode", "Bearer");
 
             var apiInstance = new SummaryApi();
-            var request = new SummaryAnalysisRequest(); // SummaryAnalysisRequest | 
+            var requestp = new SummaryAnalysisRequest(); // SummaryAnalysisRequest | 
 
             try
             {
-                AsyncResponseSummaryAnalysisResponse result = apiInstance.Post(request);
+                AsyncResponseSummaryAnalysisResponse result = apiInstance.Post(requestp);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -117,7 +117,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**SummaryAnalysisRequest**](SummaryAnalysisRequest.md)|  | 
+ **requestp** | [**SummaryAnalysisRequest**](SummaryAnalysisRequest.md)|  | 
 
 ### Return type
 

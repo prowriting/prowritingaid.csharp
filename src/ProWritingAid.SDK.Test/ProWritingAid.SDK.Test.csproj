@@ -66,7 +66,39 @@ Contact: hello@prowritingaid.com
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" Exclude="obj\**" />
+    <Compile Include="Api\ContextualThesaurusApiTests.cs" />
+    <Compile Include="Api\HtmlApiTests.cs" />
+    <Compile Include="Api\SummaryApiTests.cs" />
+    <Compile Include="Api\TextApiTests.cs" />
+    <Compile Include="Api\WordCloudApiTests.cs" />
+    <Compile Include="Model\AnalysisSettingsTests.cs" />
+    <Compile Include="Model\AnalysisSummaryGraphItemTests.cs" />
+    <Compile Include="Model\AnalysisSummaryGraphTests.cs" />
+    <Compile Include="Model\AnalysisSummaryItemTests.cs" />
+    <Compile Include="Model\AnalysisSummarySubItemTests.cs" />
+    <Compile Include="Model\AnalysisSummaryTests.cs" />
+    <Compile Include="Model\AsyncResponseContextualThesaurusResponseTests.cs" />
+    <Compile Include="Model\AsyncResponseHtmlAnalysisResponseTests.cs" />
+    <Compile Include="Model\AsyncResponseSummaryAnalysisResponseTests.cs" />
+    <Compile Include="Model\AsyncResponseTextAnalysisResponseTests.cs" />
+    <Compile Include="Model\AsyncResponseWordCloudResponseTests.cs" />
+    <Compile Include="Model\ContextualThesaurusRequestTests.cs" />
+    <Compile Include="Model\ContextualThesaurusResponseTests.cs" />
+    <Compile Include="Model\DocTagTests.cs" />
+    <Compile Include="Model\HtmlAnalysisRequestTests.cs" />
+    <Compile Include="Model\HtmlAnalysisResponseTests.cs" />
+    <Compile Include="Model\HttpStatusCodeResultTests.cs" />
+    <Compile Include="Model\ReportTests.cs" />
+    <Compile Include="Model\ResponseTests.cs" />
+    <Compile Include="Model\SuggestionCategoryTests.cs" />
+    <Compile Include="Model\SummaryAnalysisRequestTests.cs" />
+    <Compile Include="Model\SummaryAnalysisResponseTests.cs" />
+    <Compile Include="Model\TextAnalysisRequestTests.cs" />
+    <Compile Include="Model\TextAnalysisResponseTests.cs" />
+    <Compile Include="Model\TupleInt32StringTests.cs" />
+    <Compile Include="Model\UserDocumentTests.cs" />
+    <Compile Include="Model\WordCloudRequestTests.cs" />
+    <Compile Include="Model\WordCloudResponseTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
