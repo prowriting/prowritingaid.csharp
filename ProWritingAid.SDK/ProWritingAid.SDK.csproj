@@ -106,8 +106,6 @@ Contact: hello@prowritingaid.com
     <Compile Include="Model\TextAnalysisResponse.cs" />
     <Compile Include="Model\ThesaurusRequest.cs" />
     <Compile Include="Model\ThesaurusResponse.cs" />
-    <Compile Include="Model\TupleInt32String.cs" />
-    <Compile Include="Model\UserDocument.cs" />
     <Compile Include="Model\WordCloudRequest.cs" />
     <Compile Include="Model\WordCloudResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
