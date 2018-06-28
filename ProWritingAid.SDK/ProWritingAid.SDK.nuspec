@@ -6,16 +6,13 @@
         <title>ProWritingAid.SDK</title>
         <authors>Orpheus Technology LTD</authors>
         <owners>Orpheus Technology LTD</owners>
-        <projectUrl>https://prowritingaid.com</projectUrl>
-        <iconUrl>http://prowritingaid.com/favicon-96x96.png</iconUrl>
+        <projectUrl>https://github.com/prowriting/prowritingaid.csharp</projectUrl>
+        <iconUrl>https://prowritingaid.com/favicon-96x96.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>prowritingaid.com services CSharp API</description>
         <releaseNotes>
-            Initial release of the package
-            17.05.2017 Auth with session information support
-            18.05.2017 Summary analysis support
-	        31.10.2017 V2 API support Ignore patterns API
-            28.06.2018 Updated documentation
+            API V2
+            Removed synchronous methods
         </releaseNotes>
         <copyright>Copyright 2017-2018</copyright>
         <tags>prowritingaid api pwa grammar nlp style spelling rest</tags>
