@@ -43,7 +43,7 @@ namespace Example
             var api = new TextAsyncApi()
                 .SetLicenseCode("00000000-0000-0000-0000-2212FC205139");
             var request = new TextAnalysisRequest(
-                "I'd like to by that toy. wood you help me? I have twp more brothers.",
+                "I couldnt wait any any longer, I new what I hadd to do",
                 new List<string> {"grammar"},
                 TextAnalysisRequest.StyleEnum.General,
                 TextAnalysisRequest.LanguageEnum.En); 
@@ -69,17 +69,17 @@ All URIs are relative to *https://api.prowritingaid.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ContextualThesaurusApi* | [**Get**](docs/ContextualThesaurusApi.md#get) | **GET** /api/async/contextualthesaurus/result/{taskId} | Tries to get the result of a request using the task id of the request-
-*ContextualThesaurusApi* | [**Post**](docs/ContextualThesaurusApi.md#post) | **POST** /api/async/contextualthesaurus | Analyses text and returns contextual thesaurus entries-
-*HtmlApi* | [**Get**](docs/HtmlApi.md#get) | **GET** /api/async/html/result/{taskId} | Tries to get the result of a request using the task id of the request-
-*HtmlApi* | [**Post**](docs/HtmlApi.md#post) | **POST** /api/async/html | Analyses HTML and adds suggestion tags to it-
-*SummaryApi* | [**Get**](docs/SummaryApi.md#get) | **GET** /api/async/summary/result/{taskId} | Tries to get the result of a request using the task id of the request-
-*SummaryApi* | [**Post**](docs/SummaryApi.md#post) | **POST** /api/async/summary | Gets the summary analysis of a document-
-*TextApi* | [**Get**](docs/TextApi.md#get) | **GET** /api/async/text/result/{taskId} | Tries to get the result of a request using the task id of the request-
-*TextApi* | [**Post**](docs/TextApi.md#post) | **POST** /api/async/text | Analyses html and adds suggestions tags to it-
-*ThesaurusApi* | [**Post**](docs/ThesaurusApi.md#post) | **POST** /api/thesaurus | Returns the thesaurus entries for a specific word-
-*WordCloudApi* | [**Get**](docs/WordCloudApi.md#get) | **GET** /api/async/wordcloud/result/{taskId} | Tries to get the result of a request using the task id of the request-
-*WordCloudApi* | [**Post**](docs/WordCloudApi.md#post) | **POST** /api/async/wordcloud | Analyses text and returns a word cloud (as an image)-
+*ContextualThesaurusApi* | [**Get**](docs/ContextualThesaurusApi.md#get) | **GET** /api/async/contextualthesaurus/result/{taskId} | Tries to get the result of a request using the task id of the request
+*ContextualThesaurusApi* | [**Post**](docs/ContextualThesaurusApi.md#post) | **POST** /api/async/contextualthesaurus | Analyses text and returns contextual thesaurus entries
+*HtmlApi* | [**Get**](docs/HtmlApi.md#get) | **GET** /api/async/html/result/{taskId} | Tries to get the result of a request using the task id of the request
+*HtmlApi* | [**Post**](docs/HtmlApi.md#post) | **POST** /api/async/html | Analyses HTML and adds suggestion tags to it
+*SummaryApi* | [**Get**](docs/SummaryApi.md#get) | **GET** /api/async/summary/result/{taskId} | Tries to get the result of a request using the task id of the request
+*SummaryApi* | [**Post**](docs/SummaryApi.md#post) | **POST** /api/async/summary | Gets the summary analysis of a document
+*TextApi* | [**Get**](docs/TextApi.md#get) | **GET** /api/async/text/result/{taskId} | Tries to get the result of a request using the task id of the request
+*TextApi* | [**Post**](docs/TextApi.md#post) | **POST** /api/async/text | Analyses text and returns tags for it
+*ThesaurusApi* | [**Post**](docs/ThesaurusApi.md#post) | **POST** /api/thesaurus | Returns the thesaurus entries for a specific word
+*WordCloudApi* | [**Get**](docs/WordCloudApi.md#get) | **GET** /api/async/wordcloud/result/{taskId} | Tries to get the result of a request using the task id of the request
+*WordCloudApi* | [**Post**](docs/WordCloudApi.md#post) | **POST** /api/async/wordcloud | Analyses text and returns a word cloud (as an image)
 
 
 <a name="documentation-for-models"></a>
@@ -122,3 +122,4 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: licenseCode
 - **Location**: HTTP header
+

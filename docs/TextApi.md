@@ -5,7 +5,7 @@ All URIs are relative to *https://api.prowritingaid.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Get**](TextApi.md#get) | **GET** /api/async/text/result/{taskId} | Tries to get the result of a request using the task id of the request
-[**Post**](TextApi.md#post) | **POST** /api/async/text | Analyses html and adds suggestions tags to it
+[**Post**](TextApi.md#post) | **POST** /api/async/text | Analyses text and returns tags for it
 
 
 <a name="get"></a>
@@ -104,7 +104,7 @@ namespace Example
 
             try
             {
-                // Analyses html and adds suggestions tags to it
+                // Analyses text and returns tags for it
                 AsyncResponseTextAnalysisResponse result = apiInstance.Post(requestp);
                 Debug.WriteLine(result);
             }
