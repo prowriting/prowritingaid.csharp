@@ -7,6 +7,7 @@ C# library for the ProWritingAid.API
 - API version: v2
 - SDK version: 2.0.0
 - [Nuget package](https://www.nuget.org/packages/ProWritingAid.SDK/)
+For more information, please visit [https://prowritingaid.com/en/App/API#c-charp](https://prowritingaid.com/en/App/API@c-charp)
 
 ## Frameworks supported
 - .NET 4.5 or later
