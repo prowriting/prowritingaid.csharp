@@ -1,113 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!--
-ProWritingAid API V2
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-Official ProWritingAid API Version 2
-
-OpenAPI spec version: v2
-Contact: hello@prowritingaid.com
--->
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{19F1DEBC-DE5E-4517-8062-F000CD499087}</ProjectGuid>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProWritingAid.SDK.Test</RootNamespace>
-    <AssemblyName>ProWritingAid.SDK.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <RestorePackages>true</RestorePackages>
+    <LangVersion>default</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <HintPath Condition="Exists('..\packages')">..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <HintPath Condition="Exists('..\..\packages')">..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp">
-      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-      <HintPath Condition="Exists('..\packages')">..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-      <HintPath Condition="Exists('..\..\packages')">..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <HintPath Condition="Exists('..\packages')">..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <HintPath Condition="Exists('..\..\packages')">..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-    </Reference>
+    <PackageReference Include="NUnit" Version="3.13.2" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Api\ContextualThesaurusApiTests.cs" />
-    <Compile Include="Api\HtmlApiTests.cs" />
-    <Compile Include="Api\SummaryApiTests.cs" />
-    <Compile Include="Api\TextApiTests.cs" />
-    <Compile Include="Api\WordCloudApiTests.cs" />
-    <Compile Include="Model\AnalysisSettingsTests.cs" />
-    <Compile Include="Model\AnalysisSummaryGraphItemTests.cs" />
-    <Compile Include="Model\AnalysisSummaryGraphTests.cs" />
-    <Compile Include="Model\AnalysisSummaryItemTests.cs" />
-    <Compile Include="Model\AnalysisSummarySubItemTests.cs" />
-    <Compile Include="Model\AnalysisSummaryTests.cs" />
-    <Compile Include="Model\AsyncResponseContextualThesaurusResponseTests.cs" />
-    <Compile Include="Model\AsyncResponseHtmlAnalysisResponseTests.cs" />
-    <Compile Include="Model\AsyncResponseSummaryAnalysisResponseTests.cs" />
-    <Compile Include="Model\AsyncResponseTextAnalysisResponseTests.cs" />
-    <Compile Include="Model\AsyncResponseWordCloudResponseTests.cs" />
-    <Compile Include="Model\ContextualThesaurusRequestTests.cs" />
-    <Compile Include="Model\ContextualThesaurusResponseTests.cs" />
-    <Compile Include="Model\DocTagTests.cs" />
-    <Compile Include="Model\HtmlAnalysisRequestTests.cs" />
-    <Compile Include="Model\HtmlAnalysisResponseTests.cs" />
-    <Compile Include="Model\HttpStatusCodeResultTests.cs" />
-    <Compile Include="Model\ReportTests.cs" />
-    <Compile Include="Model\ResponseTests.cs" />
-    <Compile Include="Model\SuggestionCategoryTests.cs" />
-    <Compile Include="Model\SummaryAnalysisRequestTests.cs" />
-    <Compile Include="Model\SummaryAnalysisResponseTests.cs" />
-    <Compile Include="Model\TextAnalysisRequestTests.cs" />
-    <Compile Include="Model\TextAnalysisResponseTests.cs" />
-    <Compile Include="Model\TupleInt32StringTests.cs" />
-    <Compile Include="Model\UserDocumentTests.cs" />
-    <Compile Include="Model\WordCloudRequestTests.cs" />
-    <Compile Include="Model\WordCloudResponseTests.cs" />
+    <ProjectReference Include="..\..\ProWritingAid.SDK\ProWritingAid.SDK.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ProWritingAid.SDK\ProWritingAid.SDK.csproj">
-      <Project>{cd268a7b-69a9-407d-bbbc-4fa790024480}</Project>
-      <Name>ProWritingAid.SDK</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>
