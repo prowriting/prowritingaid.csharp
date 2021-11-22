@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <metadata>
-        <id>ProWritingAid.SDK.std</id>
+        <id>ProWritingAid.SDK</id>
         <version>2.0.15</version>
         <title>ProWritingAid.SDK</title>
         <authors>Orpheus Technology LTD</authors>

@@ -7,6 +7,19 @@
     <LangVersion>default</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Deterministic>false</Deterministic>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ProWritingAid.SDK.std</PackageId>
+    <PackageVersion>2.0.15</PackageVersion>
+    <Title>ProWritingAid.SDK</Title>
+    <Authors>Orpheus Technology LTD</Authors>
+    <Description>prowritingaid.com services CSharp API</Description>
+    <Copyright>Orpheus Technology LTD</Copyright>
+    <PackageProjectUrl>https://github.com/prowriting/prowritingaid.csharp</PackageProjectUrl>
+    <PackageIconUrl>https://prowritingaid.com/favicon-96x96.png</PackageIconUrl>
+    <PackageTags>prowritingaid api pwa grammar nlp style spelling rest</PackageTags>
+    <PackageReleaseNotes>API V2
+Removed synchronous methods
+.net std 2.0</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
