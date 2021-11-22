@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
     <metadata>
-        <id>ProWritingAid.SDK</id>
-        <version>2.0.14</version>
+        <id>ProWritingAid.SDK.std</id>
+        <version>2.0.15</version>
         <title>ProWritingAid.SDK</title>
         <authors>Orpheus Technology LTD</authors>
         <owners>Orpheus Technology LTD</owners>
@@ -13,16 +13,17 @@
         <releaseNotes>
             API V2
             Removed synchronous methods
+            .net std 2.0
         </releaseNotes>
         <copyright>Copyright 2017-2018</copyright>
         <tags>prowritingaid api pwa grammar nlp style spelling rest</tags>
         <dependencies>
-            <dependency id="NewtonSoft.Json" version="10.0.3" />
-            <dependency id="RestSharp" version="105.1.0" />
+            <dependency id="NewtonSoft.Json" version="13.0.1" />
+            <dependency id="RestSharp" version="106.13.0" />
         </dependencies>
     </metadata>
     <files>
-        <file src="bin\Release\ProWritingAid.SDK.*" target="lib\net45" />
+        <file src="bin\Release\netstandard2.0\ProWritingAid.SDK.*" target="lib\netstandard2.0" />
         <!-- A readme.txt will be displayed when the package is installed -->
         <file src="..\README.md" target="" />
         <file src="..\docs\**\*.*" target="docs" />

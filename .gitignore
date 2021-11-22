@@ -149,6 +149,7 @@ UpgradeLog*.htm
 
 # svn
 .svn
+.idea
 
 # SQL Server files
 **/App_Data/*.mdf
