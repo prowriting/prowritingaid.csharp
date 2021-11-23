@@ -8,8 +8,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Deterministic>false</Deterministic>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>ProWritingAid.SDK.std</PackageId>
-    <PackageVersion>2.0.15</PackageVersion>
+    <PackageId>ProWritingAid.SDK</PackageId>
+    <PackageVersion>2.1.15</PackageVersion>
     <Title>ProWritingAid.SDK</Title>
     <Authors>Orpheus Technology LTD</Authors>
     <Description>prowritingaid.com services CSharp API</Description>
